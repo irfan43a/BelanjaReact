@@ -1,0 +1,64 @@
+.login {
+  width: 500px;
+  height: 550px;
+  margin: auto;
+  margin-top: 75px;
+  /* background-color: rgb(245, 204, 204); */
+  text-align: center;
+  font-family: Metropolis;
+}
+.title {
+  /* width: 85px;
+      height: 20px;
+      top: 120px;
+      left: 920px; */
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 20px;
+  padding-top: 10px;
+  color: #db3022;
+}
+p {
+  padding-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #222222;
+}
+.btn_seller {
+  width: 123px;
+  height: 48px;
+  color: #9b9b9b;
+  /* border: 1px; */
+  background-color: #ffffff;
+  border: 1px solid #9b9b9b;
+  border-radius: 0px 4px 4px 0px;
+}
+.btn_customer {
+  width: 123px;
+  height: 48px;
+  border: 0px;
+  color: #ffffff;
+  background-color: #db3022;
+  border-radius: 4px 0px 0px 4px;
+}
+.form input {
+  width: 400px;
+  height: 48px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  outline: none;
+  border-color: #9b9b9b;
+}
+.form button {
+  margin-top: 30px;
+  width: 400px;
+  height: 48px;
+  align-items: center;
+  background-color: #db3022;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+}

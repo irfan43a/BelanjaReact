@@ -1,0 +1,76 @@
+body {
+  background-color: #ffff;
+  font-family: Metropolis;
+  width: 1440px;
+  height: 900px;
+  top: -1753px;
+  left: -10367px;
+}
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+
+  h5 {
+    margin-left: 10px;
+  }
+  .search {
+    width: 30px;
+    height: 40px;
+    outline: none;
+    border-color: #8e8e93;
+    border-radius: 23px;
+  }
+  body {
+    width: 300px;
+    height: 900px;
+    padding-left: 10px;
+  }
+}
+nav {
+  width: 1440px;
+  height: 100px;
+}
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar-nav {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.search {
+  width: 507px;
+  height: 40px;
+  outline: none;
+  border-color: #8e8e93;
+  border-radius: 23px;
+  padding-left: 30px;
+  margin-right: 10px;
+}
+.buy-btn {
+  width: 322px;
+  height: 36px;
+  background-color: #db3022;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+  margin-top: 30px;
+}
+#bag {
+  margin-top: 140px;
+  margin-left: 160px;
+  margin-right: auto;
+}
+.check {
+  margin-right: 30px;
+  color: #db3022;
+}
+.item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+h2,
+h5 {
+  font-weight: bold;
+}

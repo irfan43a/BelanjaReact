@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  justify-items: baseline;
+}
+.navbar-brand {
+  color: #db3022;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-sort {
+  border-radius: 10px;
+  border-color: #9b9b9b;
+}
+.Logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #db3022;
+}
+nav {
+  width: 1440px;
+  height: 100px;
+}
+.navbar-brand a {
+  font-family: Metropolis;
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar-nav {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.search {
+  width: 507px;
+  height: 40px;
+  outline: none;
+  border-color: #8e8e93;
+  border-radius: 23px;
+  padding-left: 30px;
+  margin-right: 10px;
+}
+.login a {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100px;
+  height: 36px;
+  background-color: #db3022;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+}
+.signup a {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100px;
+  height: 36px;
+  border-radius: 25px;
+}
