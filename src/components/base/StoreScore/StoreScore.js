@@ -1,6 +1,6 @@
 import React from "react";
 import star from "../../../img/Star.png";
-import styles from "./StoreScore.module.css";
+// import styles from "./StoreScore.module.css";
 
 const StoreScore = () => {
   return (

@@ -24,13 +24,13 @@ const Todo = () => {
       <input type="text" name="todo" placeholder="input Todo" value={todo} onChange={(e) => setTodo(e.target.value)} />
       <button onClick={handleAdd}>{isLoading ? "Looding..." : "Simpan"}</button>
 
-      {/* <ul>
+      <ul>
         {todos.map((item, index) => (
           <li key={index}>
             {item.name} -- {item.createdAt}
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };

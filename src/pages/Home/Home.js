@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import React from "react";
+// import { useSearchParams } from "react-router-dom";
 // import Button from "../../components/base/NavLink";
 import Navbar from "../../components/modules/Navbar";
 import CardProduct from "../../components/modules/Card/cardProduct";
@@ -8,14 +8,14 @@ import Footer from "../../components/base/Footer";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Home = () => {
-  const [search, setSearch] = useState("");
-  const [searchParam, setSearchParam] = useSearchParams();
-  const handleSearch = () => {
-    setSearchParam({ keyword: search });
-  };
-  useEffect(() => {
-    console.log(searchParam.get("keyword"));
-  }, [searchParam]);
+  // const [search, setSearch] = useState("");
+  // const [searchParam, setSearchParam] = useSearchParams();
+  // const handleSearch = () => {
+  //   setSearchParam({ keyword: search });
+  // };
+  // useEffect(() => {
+  //   console.log(searchParam.get("keyword"));
+  // }, [searchParam]);
   return (
     <section className={styles.main}>
       <Navbar />

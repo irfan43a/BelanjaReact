@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useNavigate, useLocation, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./navbar.module.css";
 import Logo from "../../base/Logo";
@@ -9,7 +9,7 @@ import mybag from "../../../img/mybag.png";
 
 const Navbar = () => {
   const { user } = useSelector((state) => state.user);
-  const { id } = useParams();
+  // const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);

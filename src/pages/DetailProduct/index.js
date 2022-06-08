@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import StoreScore from "../../components/base/StoreScore/StoreScore";
 import Navbar from "../../components/modules/Navbar";
 import styles from "./detailProduk.module.css";
@@ -25,7 +25,7 @@ const DetailProduct = () => {
   }
   useEffect(() => {
     fectData();
-  }, []);
+  });
 
   return (
     <section className={styles.main}>

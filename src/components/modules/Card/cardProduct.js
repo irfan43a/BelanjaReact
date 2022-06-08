@@ -22,12 +22,12 @@ const CardProduct = ({ title }) => {
     fectData();
   }, []);
 
-  const deleteProduct = (id) => {
-    axios.delete(`http://localhost:4000/v1/products/${id}`).then(() => {
-      alert("data berhasil di hapus");
-      fectData();
-    });
-  };
+  // const deleteProduct = (id) => {
+  //   axios.delete(`http://localhost:4000/v1/products/${id}`).then(() => {
+  //     alert("data berhasil di hapus");
+  //     fectData();
+  //   });
+  // };
 
   return (
     <div className={styles.container}>
