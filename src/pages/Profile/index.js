@@ -1,103 +1,142 @@
 import React from "react";
+import styles from "./profile.module.css";
+import "bootstrap/dist/css/bootstrap.css";
+import Navbar from "../../components/modules/Navbar";
+import profile from "../../img/christian.png";
+import user from "../../img/user.png";
+import map from "../../img/map.png";
+import order from "../../img/order.png";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
-    <div>
-      <section class="profile">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="profile-sidebar">
-                <img src="/img/christian.png" style="border-radius: 100%; width: 60px" />
-                <label for="profile">
-                  james mikael <br />
+    <section className={styles.main}>
+      <Navbar />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3">
+            <div className={styles.profile_sidebar}>
+              <div className={styles.main_profile}>
+                <div className={styles.profile_img}>
+                  <img src={profile} alt={profile} />
+                </div>
+                <div className={styles.name_profile}>
+                  <p>james mikael</p>
                   <p>ubah profile</p>
-                </label>
-                <div class="select-profile">
-                  <div class="user">
-                    <img src="/img/user.png" />
-                  </div>
-                  <label for="My account">My account</label>
-                  <div class="address">
-                    <img src="/img/map.png" />
-                  </div>
-                  <label for="Shippingaddress">Shipping address</label>
-                  <div class="order">
-                    <img src="/img/order.png" />
-                  </div>
-                  <label for="My acount"> My order</label>
                 </div>
               </div>
-            </div>
-            <div class="col-md-5">
-              <div class="profil">
-                <div>
-                  <h4>My Profile</h4>
-                  <p>Manage your profile information</p>
-                </div>
-                <div class="form">
-                  <div class="form-input">
-                    <table>
-                      <tr>
-                        <td>
-                          <label for="My account">Name</label>
-                        </td>
-                        <td>
-                          <input type="text" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label for="My account">Email</label>
-                        </td>
-                        <td>
-                          <input type="text" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label for="My account">Phone number</label>
-                        </td>
-                        <td>
-                          <input type="tel" id="phone" name="phone" placeholder="+62" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label for="My account">Gender</label>
-                        </td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" name="" id="" /> Laki - Laki <input type="radio" name="" id="" /> Perempuan
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label for="My account">Date of birt </label>
-                        </td>
-                        <td>
-                          <input type="month" id="bdaymonth" name="bdaymonth" />
-                        </td>
-                      </tr>
-                      <tr rowspan="2">
-                        <td>
-                          <button class="save-btn">Save</button>
-                        </td>
-                      </tr>
-                    </table>
+              <div className={styles.select_profile}>
+                <div className={styles.user_acount}>
+                  <div className={styles.menu_profile}>
+                    <div className={`${styles.circle} ${styles.blue}`}>
+                      <img src={user} alt="" />
+                    </div>
+                    <div className={styles.dropdown}>
+                      <button className={styles.dropbtn}>Store</button>
+                      <div className={styles.dropdown_content}>
+                        <Link to="/profile">Profile</Link>
+                        <Link to="/profileseler">Store Profile</Link>
+                      </div>
+                    </div>
                   </div>
-                  <div class="image-input">
-                    <img src="/img/christian.png" style="border-radius: 100%; width: 100px; border-color: white" />
-                    <button class="image-btn">Select image</button>
+                </div>
+                <div className={styles.shiping}>
+                  <div className={styles.menu_profile}>
+                    <div className={`${styles.circle} ${styles.orange}`}>
+                      <img src={map} alt="" />
+                    </div>
+                    <div className={styles.dropdown}>
+                      <button className={styles.dropbtn}>Shiping Address</button>
+                      <div className={styles.dropdown_content}>
+                        <Link to="#">Shiping Address</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.order_acount}>
+                  <div className={styles.menu_profile}>
+                    <div className={`${styles.circle} ${styles.pink}`}>
+                      <img src={order} alt="" />
+                    </div>
+                    <div className={styles.dropdown}>
+                      <button className={styles.dropbtn}>My Order</button>
+                      <div className={styles.dropdown_content}>
+                        <Link to="#">My Order</Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div className="col-md-5">
+            <div className={styles.profil}>
+              <div>
+                <h4>My Profile</h4>
+                <p>Manage your profile information</p>
+              </div>
+              <div className={styles.form}>
+                <div className={styles.form_input}>
+                  <table>
+                    <tr>
+                      <td>
+                        <label htmlFor="My account">Name</label>
+                      </td>
+                      <td>
+                        <input type="text" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label htmlFor="My account">Email</label>
+                      </td>
+                      <td>
+                        <input type="text" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label htmlFor="My account">Phone number</label>
+                      </td>
+                      <td>
+                        <input type="tel" id="phone" name="phone" placeholder="+62" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label htmlFor="My account">Gender</label>
+                      </td>
+                      <td>
+                        <div className={styles.radio}>
+                          <input type="radio" name="gender" id="" /> Laki - Laki <input type="radio" name="gender" id="" /> Perempuan
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label htmlFor="My account">Date of birt </label>
+                      </td>
+                      <td>
+                        <input type="month" id="bdaymonth" name="bdaymonth" />
+                      </td>
+                    </tr>
+                    <tr rowSpan="2">
+                      <td>
+                        <button className={styles.save_btn}>Save</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div className={styles.image_input}>
+                  <img src={profile} alt="cris" />
+                  <button className={styles.image_btn}>Select image</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

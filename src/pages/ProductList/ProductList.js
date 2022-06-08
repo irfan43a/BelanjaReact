@@ -19,7 +19,7 @@ const ProductList = () => {
       <h2>Product List</h2>
       <div className={styles.wrapperInput}>
         <Input type="text" placeholder="product" id="product" name="product" label="Product" value={product} onChange={handleChange} />
-        <Button title="Simpan" color="cyan" onClick={handleSimpan} />
+        <Button title="Simpan" onClick={handleSimpan} />
       </div>
       {products.map((item) => (
         <Card content={item} />

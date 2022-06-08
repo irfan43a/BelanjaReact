@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./customer.module.css";
+import Logo from "../../../components/base/Logo";
+import styles from "./register.module.css";
 
-const Registerustomer = () => {
+const register = () => {
   return (
     <div>
-      <div className={styles.container}>
+      <div className="container">
         <div className={styles.login}>
           <div className={styles.title}>
-            <img src="/img/belanjavector.png" className="d-inline-block" />
-            Belanja
+            <Logo title="Belanja" />
           </div>
           <p>Please sign up with your account</p>
           <div className="swictacount">
@@ -23,9 +23,12 @@ const Registerustomer = () => {
           <div className={styles.form}>
             <input type="text" name="Name" id="name" placeholder="Name" />
             <input type="Email" name="email" placeholder="Email" />
+            <input type="text" name="phone" placeholder="Phone number" />
+            <input type="text" name="storename" placeholder="Store name" />
             <input type="password" name="pass" placeholder="Password" />
 
             <button type="submit">PRIMARY</button>
+
             <p>
               Already have a Belanja account?<Link to="/login">Login</Link>
             </p>
@@ -36,4 +39,4 @@ const Registerustomer = () => {
   );
 };
 
-export default Registerustomer;
+export default register;

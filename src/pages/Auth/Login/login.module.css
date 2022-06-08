@@ -1,4 +1,5 @@
 .container {
+  width: 1440px;
   font-family: Metropolis;
   display: flex;
   margin-top: 100px;
@@ -6,6 +7,25 @@
   flex-direction: column;
   justify-content: center;
 }
+body {
+  background-color: #ffff;
+  width: 1440px;
+  height: 900px;
+  top: -1753px;
+  left: -1759px;
+}
+@media only screen and (max-width: 315px) {
+  /* For mobile phones: */
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .form input {
+    width: 100%;
+    margin: auto;
+  }
+}
+
 .title {
   /* background-color: #dbd822; */
   margin-top: 10px;
@@ -14,7 +34,7 @@
 }
 .logo {
   padding-top: 10px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 28px;
   line-height: 20px;
   flex: flex;
@@ -22,7 +42,10 @@
   flex-direction: row;
   justify-items: baseline;
 }
-
+.logo a {
+  text-decoration: none;
+  color: #db3022;
+}
 image {
   width: 35.85px;
   height: 50px;
@@ -94,9 +117,10 @@ a {
   font-size: 14px;
   color: #222222;
 }
-a:hover {
-  background-color: lightgreen;
+.reset a {
+  color: #db3022;
 }
-a {
+
+.register a {
   color: #db3022;
 }

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import Button from "../../components/base/Button2";
+// import Button from "../../components/base/NavLink";
 import Navbar from "../../components/modules/Navbar";
 import CardProduct from "../../components/modules/Card/cardProduct";
 import styles from "./home.module.css";
+import Footer from "../../components/base/Footer";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -16,33 +17,29 @@ const Home = () => {
     console.log(searchParam.get("keyword"));
   }, [searchParam]);
   return (
-    <>
+    <section className={styles.main}>
       <Navbar />
-      <div className={styles.container}>
-        <h1>Home</h1>
-        {/* <p>{process.env.REACT_APP_API_BACKEND}</p>
-        <input type="text" name="search" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
-        <button onClick={handleSearch}>Cari</button>
-        <p>hasil pencarian adlah = {searchParam.get("keyword")}</p>
-        <Button title="submit" onClick={() => alert("helo")}>
-          <span>helo</span>
-        </Button>
-        <Link to="/productlist">ProductList</Link> */}
+      <div className="container-md">
         <section className={styles.polular}>
+          <h5>New</h5>
+          <p className={styles.sub}>You've never seen it before</p>
           <div className={styles.container}>
+            <div className="row text-start">{/* <Button color={"blue"} darkColor={"darkblue"} /> */}</div>
+            <div className="container-md">
+              <CardProduct />
+            </div>
             <div className="row text-start">
               <h5>Popular</h5>
               <p className={styles.sub}>You've never seen it before</p>
             </div>
-            <div class="container">
-              <div className={styles.row}>
-                <CardProduct />
-              </div>
+            <div className="container-sm">
+              <CardProduct />
             </div>
           </div>
         </section>
       </div>
-    </>
+      <Footer />
+    </section>
   );
 };
 

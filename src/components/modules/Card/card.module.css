@@ -11,6 +11,12 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+.fit_image {
+  width: 208px;
+  height: 126px;
 }
 .image {
   width: 208px;
@@ -31,14 +37,34 @@
 .card_body {
   position: absolute;
 }
-/* .store_rangked {
-  margin-top: -10px;
-} */
+.store_rangked {
+  width: 208px;
+  height: 150px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  /* margin-top: 10px; */
+}
 .price {
+  margin: 0;
   color: #db3022;
-  /* margin-top: -20px;
-  position: absolute; */
+  padding-left: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+}
+.card_title a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
 }
 .card_title {
-  color: black;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+.store {
+  font-size: 12px;
+  padding: 10px;
+  margin: 0;
+  color: #9b9b9b;
 }

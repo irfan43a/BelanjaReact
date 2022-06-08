@@ -12,6 +12,9 @@
   font-size: 28px;
   line-height: 20px;
   padding-top: 10px;
+}
+.title a {
+  text-decoration: none;
   color: #db3022;
 }
 p {
@@ -20,21 +23,22 @@ p {
   font-size: 18px;
   color: #222222;
 }
-.btn_customer {
+.btn_seller {
   width: 123px;
   height: 48px;
   color: #9b9b9b;
+  /* border: 1px; */
   background-color: #ffffff;
   border: 1px solid #9b9b9b;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 0px 4px 4px 0px;
 }
-.btn_seller {
+.btn_customer {
   width: 123px;
   height: 48px;
   border: 0px;
   color: #ffffff;
   background-color: #db3022;
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 4px 0px 0px 4px;
 }
 .form input {
   width: 400px;
@@ -56,4 +60,8 @@ p {
   color: #ffffff;
   border: 0;
   border-radius: 25px;
+}
+.form a {
+  text-decoration: none;
+  color: #db3022;
 }
