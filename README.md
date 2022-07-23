@@ -156,42 +156,6 @@ REACT_APP_API_URL=YOUR_API_URL
 - [TukuShop API](https://github.com/HyperCarry-Team/TukuShop-app-backend)
 - [TukuShop Demo](https://tukushop-app.vercel.app/)
 
-## Our Team
-
-<center>
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/edoprayoga1999">
-          <img width="100" src="https://avatars.githubusercontent.com/u/101086199?v=4" alt="Edo Prayoga"><br/>
-          <sub><b>Edo Prayoga</b></sub> <br/>
-            <sub>Project Manager | Full Stack Web Developer</sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/andry-pebrianto">
-          <img width="100" src="https://avatars.githubusercontent.com/u/72940944?s=400&u=ab89473c5b802a06d59c85c85c3071373bce24d5&v=4" alt="Andry Pebrianto"><br/>
-          <sub><b>Andry Pebrianto</b></sub> <br/>
-          <sub>Full Stack Web Developer</sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/rikakus">
-          <img width="100" src="https://avatars.githubusercontent.com/u/59488349?v=4" alt="Ian Pangestu Setyanto"><br/>
-          <sub><b>Ian Pangestu Setyanto</b></sub> <br/>
-          <sub>Front End Web Developer</sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/janexmgd">
-          <img width="100" src="https://avatars.githubusercontent.com/u/43938494?v=4" alt="Denny Wahyu Prasetyo"><br/>
-          <sub><b>Denny Wahyu Prasetyo</b></sub> <br/>
-          <sub>Full Stack Web Developer</sub>
-        </a>
-      </td>
-    </tr>
-  </table>
-</center>
 
 ## License
 
