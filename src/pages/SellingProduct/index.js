@@ -3,13 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const SellingProduct = () => {
-  // cara 1 membuat state 1 buah
-  //   const [name, setName] = useState("");
-  //   const [description, setDescription] = useState("");
-  //   const [stock, setStock] = useState("");
-  //   const [price, setPrice] = useState("");
-  //   const [idcategory, setIdcategory] = useState("");
-  //   cara 2 di bungkus menggunakan object
   const navigate = useNavigate();
   const [dataProduct, setDataProduct] = useState({
     name: "",
@@ -20,6 +13,17 @@ const SellingProduct = () => {
     photo: "",
   });
 
+  const [file, setFile] = useState({
+    file: null,
+    priview: "",
+  });
+
+  const handleUploadChange = (e) => {
+    console.log(e.target.files[0]);
+    let upload = e.target.files[0];
+    setFile(upload);
+  };
+
   const handleChange = (e) => {
     setDataProduct({
       ...dataProduct,
@@ -28,15 +32,29 @@ const SellingProduct = () => {
   };
   const handleUpload = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:4000/v1/products/", dataProduct)
-      .then(() => {
-        navigate("/product");
+
+    let bodyFormData = new FormData();
+    bodyFormData.append("name", dataProduct.name);
+    bodyFormData.append("description", dataProduct.description);
+    bodyFormData.append("stock", dataProduct.stock);
+    bodyFormData.append("price", dataProduct.price);
+    bodyFormData.append("id_category", dataProduct.id_category);
+    bodyFormData.append("photo", file);
+
+    axios({
+      method: "POST",
+      url: "http://localhost:4000/v1/products/",
+      data: bodyFormData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then((res) => {
+        alert("produk berhasil di tambah");
+        console.log(res);
       })
       .catch((e) => {
-        // console.log(e.response.data.message);
         alert(e.response.data.message);
       });
+    // .post("http://localhost:4000/v1/products/", dataProduct)
   };
   return (
     <form onSubmit={handleUpload}>
@@ -58,7 +76,7 @@ const SellingProduct = () => {
           <input type="number" name="id_category" value={dataProduct.id_category} placeholder="id category" onChange={handleChange} />
         </li>
         <li>
-          <input type="file" name="photo" value={dataProduct.photo} placeholder="photo" onChange={handleChange} />
+          <input type="file" name="photo" value={dataProduct.photo} placeholder="photo" onChange={handleUploadChange} />
         </li>
       </ul>
       <button type="submit">Register</button>

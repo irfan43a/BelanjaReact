@@ -1,34 +1,158 @@
-import * as string from "../string";
 const initialState = {
-  data: [],
-  curentPage: 0,
-  totalData: 0,
+  products: {},
   isLoading: false,
-  error: null,
 };
 
-const productReducer = (state = initialState, action) => {
+export const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case string.GET_PRODUCT_PENDING:
+    case "ADD_PRODUCT_PENDING":
       return {
         ...state,
         isLoading: true,
       };
-    case string.GET_PRODUCT_SUCCESS: {
+    case "ADD_PRODUCT_SUCCESS":
       return {
         ...state,
-        ...action.payload,
+        products: action.payload,
         isLoading: false,
       };
-    }
-    case string.GET_PRODUCT_ERROR:
+    case "GET_PRODUCTS_PENDING":
       return {
         ...state,
-        error: action.payload,
+        isLoading: true,
+      };
+    case "GET_PRODUCTS_SUCCESS":
+      return {
+        ...state,
+        products: action.payload,
         isLoading: false,
       };
+    case "UPDATE_PRODUCT_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "UPDATE_PRODUCT_SUCCESS":
+      return {
+        ...state,
+        products: action.payload,
+        isLoading: false,
+      };
+    case "DELETE_PRODUCT_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "DELETE_PRODUCT_SUCCESS":
+      return {
+        ...state,
+        products: action.payload,
+        isLoading: false,
+      };
+
     default:
       return state;
   }
 };
-export default productReducer;
+
+const searchState = {
+  productDetail: {},
+  isLoading: false,
+};
+
+export const detailProdReducer = (state = searchState, action) => {
+  switch (action.type) {
+    case "DETAIL_PRODUCT_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "DETAIL_PRODUCT_SUCCESS":
+      // console.log(state.products)
+      return {
+        ...state,
+        productDetail: action.payload,
+        isLoading: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// import * as string from "../string.js";
+// const initialState = {
+//   data: null,
+//   pagination: {
+//     currentPage: 0,
+//     limit: 0,
+//     totalData: 0,
+//     totalPage: 0,
+//   },
+//   error: null,
+// };
+
+// const productReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case string.GET_PRODUCT_PENDING:
+//       return {
+//         ...state,
+//         isLoading: true,
+//       };
+//     case string.GET_PRODUCT_SUCCESS: {
+//       return {
+//         ...state,
+//         ...action.payload,
+//         isLoading: false,
+//       };
+//     }
+//     case string.GET_PRODUCT_ERROR:
+//       return {
+//         ...state,
+//         error: action.payload,
+//         isLoading: false,
+//       };
+//     default:
+//       return state;
+//   }
+// };
+
+// export default productReducer;
+
+// import * as string from "../string";
+// const initialState = {
+//   data: null,
+//   pagination: {
+//     currentPage: 0,
+//     limit: 0,
+//     totalData: 0,
+//     totalPage: 0,
+//   },
+//   error: null,
+// };
+
+// const productReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case string.GET_PRODUCT_PENDING:
+//       return {
+//         ...state,
+//         isLoading: true,
+//       };
+//     case string.GET_PRODUCT_SUCCESS: {
+//       return {
+//         ...state,
+//         ...action.payload,
+//         isLoading: false,
+//       };
+//     }
+//     case string.GET_PRODUCT_ERROR:
+//       return {
+//         ...state,
+//         error: action.payload,
+//         isLoading: false,
+//       };
+//     default:
+//       return state;
+//   }
+// };
+// export default productReducer;

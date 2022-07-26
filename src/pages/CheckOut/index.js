@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/modules/Navbar";
 import styles from "./chechkout.module.css";
 import mesuit from "../../img/formalsuitblack.png";
 import jaket from "../../img/jaketjeans.png";
 
 const CheckOut = () => {
+  useEffect(function () {
+    document.title = "Check Out";
+  }, []);
   return (
     <section className={styles.checkout}>
       <Navbar />

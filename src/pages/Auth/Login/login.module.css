@@ -1,28 +1,32 @@
-.container {
-  width: 1440px;
-  font-family: Metropolis;
+.containerLogin {
   display: flex;
-  margin-top: 100px;
-  text-align: center;
-  flex-direction: column;
+  font-family: Metropolis;
+  /* background-color: #22db31; */
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
 }
-body {
+.content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(238, 255, 0); */
+  width: 450px;
+  padding: 10px;
+  align-items: center;
+}
+/* body {
   background-color: #ffff;
   width: 1440px;
   height: 900px;
   top: -1753px;
   left: -1759px;
-}
-@media only screen and (max-width: 315px) {
+} */
+
+@media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .container {
     width: 100%;
-    margin: auto;
-  }
-  .form input {
-    width: 100%;
-    margin: auto;
+    height: 100vh;
   }
 }
 

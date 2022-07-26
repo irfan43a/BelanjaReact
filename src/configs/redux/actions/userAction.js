@@ -7,6 +7,7 @@ export const loginUser = (dataFrom, navigate) => async (dispatch) => {
     localStorage.setItem("token", user.token);
     localStorage.setItem("refreshToken", user.refreshToken);
     dispatch({ type: "USER_LOGIN_SUCCESS", payload: user });
+    alert("Login berhasil :) ");
     navigate("/home");
   } catch (error) {}
 };

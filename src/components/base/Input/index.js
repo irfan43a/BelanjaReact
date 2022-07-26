@@ -1,27 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
+import styles from "./input.module.css";
 
-const Input = ({ label, id, ...props }) => {
+const Input = ({ type, className, classNameLabel, placeholder, name, id, value, onChange, label }) => {
   return (
-    <div className="mb-3">
-      <label className="form-label" htmlFor={id}>
+    <div className={styles.input}>
+      <label htmlFor={name} className={styles[classNameLabel]}>
         {label}
       </label>
-      <input id={id} className="form-control" {...props} />
+      <input type={type} name={name} id={id} className={styles[className]} placeholder={placeholder} value={value} onChange={onChange} />
     </div>
   );
-};
-Input.defaultProps = {
-  label: "isi form ini",
-};
-Input.propTypes = {
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  type: PropTypes.string,
-  onChange: PropTypes.func,
 };
 
 export default Input;

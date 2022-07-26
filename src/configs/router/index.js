@@ -45,8 +45,23 @@ const Router = () => {
             </RequireAuth>
           }
         />
-        <Route path="/profileseler" element={<ProfileSeller />} />
-        <Route path="/myproduct" element={<MyProduct />} />
+        <Route
+          path="/profileseler"
+          element={
+            <RequireAuth>
+              <ProfileSeller />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/myproduct"
+          element={
+            <RequireAuth>
+              <MyProduct />
+            </RequireAuth>
+          }
+        />
+
         <Route path="/customer" element={<RegisterCustomer />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/counter" element={<Counter />} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from "../../components/modules/Navbar";
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import mesuit from "../../img/formalsuitblack.png";
 import jaket from "../../img/jaketjeans.png";
 
 const MyBag = () => {
+  useEffect(function () {
+    document.title = "My Bag";
+  }, []);
   return (
     <div>
       <Navbar />

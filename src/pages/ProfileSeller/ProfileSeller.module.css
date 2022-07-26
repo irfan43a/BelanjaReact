@@ -122,40 +122,15 @@
   align-items: baseline;
   gap: 20px;
 }
-
-/* .radio_item input[type="radio"] {
-  display: none;
+.jual_btn {
+  /* margin-right: 30px; */
+  margin-left: 700px;
+  margin-top: 30px;
+  width: 128px;
+  height: 48px;
+  border-radius: 25px;
 }
 
-.radio_item label {
-  color: #666;
-  font-weight: normal;
-} */
-
-/* .radio_item label:before {
-  content: " ";
-  display: inline-block;
-  position: relative;
-  top: 5px;
-  margin: 0 5px 0 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 11px;
-  border: 2px solid #004c97;
-  background-color: #db3022;
-}
-
-.radio-item input[type="radio"]:checked + label:after {
-  border-radius: 11px;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  content: " ";
-  display: block;
-  background: #ffff;
-} */
 .save_btn {
   width: 100px;
   height: 36px;

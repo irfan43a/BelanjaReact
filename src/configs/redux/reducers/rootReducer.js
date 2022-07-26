@@ -1,13 +1,17 @@
 import { combineReducers } from "redux";
 import counterReducer from "./counterReducer";
 import todosReducer from "./todosReducer";
-import productReducer from "./product";
-import userReducer from "./userReducer_";
+import { productsReducer, detailProdReducer } from "./product";
+import userReducer from "./userReducer";
+import categoryReducer from "./categoryReducer";
 
 const rootReducer = combineReducers({
   todo: todosReducer,
   counter: counterReducer,
-  product: productReducer,
+  // product: productReducer,
   user: userReducer,
+  category: categoryReducer,
+  products: productsReducer,
+  productDetail: detailProdReducer,
 });
 export default rootReducer;

@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import store from "./configs/redux/store"
+import store from "./configs/redux/store";
 
 ReactDOM.render(
   <React.StrictMode>

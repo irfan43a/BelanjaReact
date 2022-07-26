@@ -30,7 +30,7 @@ const register = () => {
             <button type="submit">PRIMARY</button>
 
             <p>
-              Already have a Belanja account?<Link to="/login">Login</Link>
+              Already have a Belanja account? <Link to="/login">Login</Link>
             </p>
           </div>
         </div>

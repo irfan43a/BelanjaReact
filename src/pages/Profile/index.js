@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./profile.module.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from "../../components/modules/Navbar";
@@ -9,6 +9,9 @@ import order from "../../img/order.png";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
+  useEffect(function () {
+    document.title = "Profile";
+  }, []);
   return (
     <section className={styles.main}>
       <Navbar />

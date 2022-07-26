@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./customer.module.css";
@@ -7,9 +7,9 @@ import Logo from "../../../components/base/Logo";
 const Registerustomer = () => {
   const navigate = useNavigate();
   const [formRegister, setformRegister] = useState({
+    fullname: "",
     email: "",
     password: "",
-    fullname: "",
   });
 
   const handleChange = (e) => {
@@ -30,8 +30,11 @@ const Registerustomer = () => {
         alert(e.response.data.message);
       });
   };
+  useEffect(function () {
+    document.title = "Register";
+  }, []);
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.container}>
         <div className={styles.login}>
           <div className={styles.title}>
@@ -48,10 +51,10 @@ const Registerustomer = () => {
           </div>
           <div className={styles.form}>
             <form onSubmit={handleRegister}>
-              <input class={styles.name} type="text" name="name" value={formRegister.fullname} placeholder="nama" onChange={handleChange} />
-              <input class={styles.email} type="email" name="email" value={formRegister.email} placeholder="Email" onChange={handleChange} />
-              <input class={styles.pass} type="password" name="password" value={formRegister.password} placeholder="password" onChange={handleChange} />
-              <button type="submit">PRIMARY</button>
+              <input className={styles.fullname} type="text" name="fullname" value={formRegister.fullname} placeholder="fullname" onChange={handleChange} />
+              <input className={styles.email} type="email" name="email" value={formRegister.email} placeholder="Email" onChange={handleChange} />
+              <input className={styles.pass} type="password" name="password" value={formRegister.password} placeholder="password" onChange={handleChange} />
+              <button type="submit">Register</button>
             </form>
             <p>
               Already have a Belanja account? <Link to="/login">Login</Link>

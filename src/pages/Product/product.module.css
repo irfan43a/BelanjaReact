@@ -1,16 +1,19 @@
-.profile {
-  margin-top: 130px;
-  padding-left: 90px;
-  padding-right: auto;
-  background-color: rgb(255, 255, 255);
-  width: 1440px;
-  height: 900px;
-  box-sizing: border-box;
+.main {
+  margin-top: 100px;
+  padding-left: 30px;
   display: flex;
-  flex-direction: row;
-  /* background-color: aqua; */
 }
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: auto;
+}
+.product {
+  margin-left: 20px;
+  margin-top: 30px;
+}
 .profile_sidebar {
   padding-left: 20px;
   padding-top: 50px;
@@ -23,8 +26,8 @@
   height: 150px;
 }
 .profile_img {
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 }
 .profile_img img {
@@ -109,61 +112,17 @@
   background-color: white;
   color: black;
 }
-.product {
-  width: 850px;
-  height: 636px;
-  border: 1px solid black;
-  padding-top: 20px;
-  padding-left: 30px;
-  padding-bottom: 10px;
+.image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
 }
-.product_menu {
-  display: flex;
-  margin-top: 20px;
-  gap: 50px;
-  color: #9b9b9b;
+.image img {
+  width: 100%;
+  height: 100%;
 }
-.product_menu div:hover {
-  color: #db3022;
-}
-
-.search {
-  width: 230px;
-  height: 36px;
-  border-radius: 23px;
-  outline: none;
-  padding-left: 30px;
-}
-.product_lis {
-  width: 800px;
-  height: 412px;
-  border: 1px solid #d4d4d4;
-  border-radius: 4px;
-  /* margin-top: -30px; */
-  margin-left: -8px;
-  margin-right: 25px;
-}
-.menu_sort {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  /* background-color: #9b9b9b; */
-}
-.sub_sort button {
-  margin-right: 30px;
-}
-.menu_sort button {
-  background-color: white;
-  color: #9b9b9b;
-}
-.menu_sort button:hover {
-  background-color: #9b9b9b;
-  color: white;
-}
-.product_item {
-  border: 1px solid black;
-  margin-left: 10px;
-  margin-top: 10px;
-  width: 780px;
-  height: 80px;
+.card {
+  width: 300px;
+  height: 450px;
+  box-sizing: border-box;
 }

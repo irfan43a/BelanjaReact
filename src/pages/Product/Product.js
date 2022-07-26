@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "./product.module.css";
+import { Link } from "react-router-dom";
+import Navbar from "../../components/modules/Navbar";
+import box from "../../img/box.png";
+import profile from "../../img/christian.png";
+import store from "../../img/home.png";
+import packag from "../../img/package.png";
+import cart from "../../img/cart.png";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
+  const [page, setPage] = useState({
+    currentPage: 1,
+    limit: 5,
+  });
   // konsum lewat asyn await
   async function fectData() {
     try {
       const result = await axios({
         method: "Get",
         baseURL: "http://localhost:4000/v1",
-        url: "/products",
+        url: `/products?page=${page}`,
       });
       setProduct(result.data.data);
     } catch (error) {
@@ -43,41 +55,76 @@ const Product = () => {
     });
   };
   return (
-    <div>
-      <h1>Product</h1>
-
-      {product.map((item) => (
-        <div className="card" key={item.id}>
-          <div className="card-body">Item : {item.name}</div>
-          <div className="card-body">Deskripsi : {item.description}</div>
-          <div className="card-body">harga : {item.price}</div>
-          <div className="card-body">{item.photo}</div>
-          <button onClick={() => deleteProduct(item.id)}>delete</button>
+    <div className={styles.main}>
+      <Navbar />
+      <div className={styles.profile_sidebar}>
+        <div className={styles.main_profile}>
+          <div className={styles.profile_img}>
+            <img src={profile} alt={profile} />
+          </div>
+          <div className={styles.name_profile}>
+            <p>james mikael</p>
+            <p>ubah profile</p>
+          </div>
         </div>
-      ))}
-      {/* {product.map((item) => (
-        <div className="col-md-3 mb-3">
-          <div className="card">
-            <img src={item.photo} className="card-img-top" alt={item.name} />
-            <div className="card-body">
-              <h6 className="card-title">
-                <a href="productsdetailv1.html">{item.name}</a>
-              </h6>
-              <p className="price">$ {item.price}</p>
-              <p>{item.photo}</p>
-              <p className="store">
-                Zalora Cloth
-                <br />
-                <img src="/img/Star.png" alt="start" />
-                <img src="/img/Star.png" alt="start" />
-                <img src="/img/Star.png" alt="start" />
-                <img src="/img/Star.png" alt="start" />
-                <img src="/img/Star.png" alt="start" /> (10)
-              </p>
+        <div className={styles.menu_profile}>
+          <div className={`${styles.circle} ${styles.blue}`}>
+            <img src={store} alt="" />
+          </div>
+          <div className={styles.dropdown}>
+            <button className={styles.dropbtn}>Store</button>
+            <div className={styles.dropdown_content}>
+              <Link to="/profile">Profile</Link>
+              <Link to="#">Store Profile</Link>
             </div>
           </div>
         </div>
-      ))} */}
+        <div className={styles.menu_profile}>
+          <div className={`${styles.circle} ${styles.orange}`}>
+            <img src={packag} alt="" />
+          </div>
+          <div className={styles.dropdown}>
+            <button className={styles.dropbtn}>Products</button>
+            <div className={styles.dropdown_content}>
+              <Link to="/myproduct">My Product</Link>
+              <Link to="/profileseler">Selling Product</Link>
+              <Link to="/product">Product list</Link>
+            </div>
+          </div>
+        </div>
+        <div className={styles.menu_profile}>
+          <div className={`${styles.circle} ${styles.pink}`}>
+            <img src={cart} alt="" />
+          </div>
+          <div className={styles.dropdown}>
+            <button className={styles.dropbtn}>Order</button>
+            <div className={styles.dropdown_content}>
+              <Link to="#">My Order</Link>
+              <Link to="#">Order cancel</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.product}>
+        <h1>Product</h1>
+        <div className={styles.container}>
+          {product.map((item) => (
+            <div className={styles.card} key={item.id}>
+              <div className={styles.image}>
+                <img src={item.photo} alt="" />
+              </div>
+              <div className="card-body">Item : {item.name}</div>
+              <div className="card-body">Deskripsi : {item.description}</div>
+              <div className="card-body">harga : {item.price}</div>
+              <div className="card-body"></div>
+              <button onClick={() => deleteProduct(item.id)}>delete</button>
+              <Link to="/profileseler">
+                <button> Edit</button>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

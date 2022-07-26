@@ -7,7 +7,10 @@ body {
 .main {
   background-color: #ffff;
   margin-top: 150px;
+  min-height: 100vh;
+  width: 100vw;
 }
+
 @media only screen and (max-width: 360px) {
   /* For mobile phones: */
   body,
