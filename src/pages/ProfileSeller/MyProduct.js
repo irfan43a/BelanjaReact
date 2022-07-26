@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,10 +23,10 @@ const MyProduct = () => {
   //   dispatch(getProduct);
   //   // dispatch(getCategory);
   // }, []);
-  const [page, setPage] = useState({
-    currentPage: 1,
-    limit: 5,
-  });
+  // const [page, setPage] = useState({
+  //   currentPage: 1,
+  //   limit: 5,
+  // });
   const { isLoading, products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 

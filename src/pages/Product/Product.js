@@ -3,7 +3,6 @@ import axios from "axios";
 import styles from "./product.module.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/modules/Navbar";
-import box from "../../img/box.png";
 import profile from "../../img/christian.png";
 import store from "../../img/home.png";
 import packag from "../../img/package.png";
@@ -11,23 +10,23 @@ import cart from "../../img/cart.png";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
-  const [page, setPage] = useState({
-    currentPage: 1,
-    limit: 5,
-  });
-  // konsum lewat asyn await
-  async function fectData() {
-    try {
-      const result = await axios({
-        method: "Get",
-        baseURL: "http://localhost:4000/v1",
-        url: `/products?page=${page}`,
-      });
-      setProduct(result.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const [page, setPage] = useState({
+  //   currentPage: 1,
+  //   limit: 5,
+  // });
+  // // konsum lewat asyn await
+  // async function fectData() {
+  //   try {
+  //     const result = await axios({
+  //       method: "Get",
+  //       baseURL: process.env.REACT_APP_API_BACKEND,
+  //       url: `/products?page=${page}`,
+  //     });
+  //     setProduct(result.data.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
   useEffect(() => {
     // axios(
     // cara 1 dengan axios
@@ -45,15 +44,15 @@ const Product = () => {
     //   .catch((err) => {
     //     console.log(err);
     //   });
-    fectData();
+    // fectData();
   }, []);
 
-  const deleteProduct = (id) => {
-    axios.delete(`http://localhost:4000/v1/products/${id}`).then(() => {
-      alert("data berhasil di hapus");
-      fectData();
-    });
-  };
+  // const deleteProduct = (id) => {
+  //   axios.delete(`${process.env.REACT_APP_API_BACKEND}products/${id}`).then(() => {
+  //     alert("data berhasil di hapus");
+  //     fectData();
+  //   });
+  // };
   return (
     <div className={styles.main}>
       <Navbar />
@@ -117,7 +116,7 @@ const Product = () => {
               <div className="card-body">Deskripsi : {item.description}</div>
               <div className="card-body">harga : {item.price}</div>
               <div className="card-body"></div>
-              <button onClick={() => deleteProduct(item.id)}>delete</button>
+              {/* <button onClick={() => deleteProduct(item.id)}>delete</button> */}
               <Link to="/profileseler">
                 <button> Edit</button>
               </Link>

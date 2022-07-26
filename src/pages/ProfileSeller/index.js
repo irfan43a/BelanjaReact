@@ -51,7 +51,7 @@ const ProfileSeller = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:4000/v1/products/",
+      url: `${process.env.REACT_APP_API_BACKEND}products/`,
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 // import { useSearchParams } from "react-router-dom";
 // import Button from "../../components/base/NavLink";
+// import { useSearchParams } from "react-router-dom";
 import Navbar from "../../components/modules/Navbar";
-
 import styles from "./home.module.css";
 import Footer from "../../components/base/Footer";
 import "bootstrap/dist/css/bootstrap.css";
-// import { useSearchParams } from "react-router-dom";
 import axios from "../../configs/axios";
 import Card from "../../components/modules/Card2";
 
@@ -44,7 +43,7 @@ const Home = () => {
           <p className={styles.sub}>You've never seen it before</p>
           <div className={styles.content}>
             {product.map((item) => (
-              <Card key={item.id} image={item.photo} name={item.name} price={item.price} />
+              <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />
             ))}
           </div>
         </div>

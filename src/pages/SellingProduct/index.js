@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const SellingProduct = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [dataProduct, setDataProduct] = useState({
     name: "",
     description: "",

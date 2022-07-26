@@ -15,8 +15,8 @@ const DetailProduct = () => {
     try {
       const result = await axios({
         method: "Get",
-        baseURL: "http://localhost:4000/v1",
-        url: `/products/${id}`,
+        baseURL: process.env.REACT_APP_API_BACKEND,
+        url: `products/${id}`,
       });
       setProduct(result.data.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const DetailProduct = () => {
   useEffect(() => {
     fectData();
   });
-
+  console.log(product);
   return (
     <section className={styles.main}>
       <Navbar />
@@ -81,13 +81,25 @@ const DetailProduct = () => {
                 </div>
               </div>
               <div className={styles.btn}>
-                <button type="button" className={styles.btn_chat} onclick="document.location=''">
+                <button
+                  type="button"
+                  className={styles.btn_chat}
+                  // onClick="document.location=''"
+                >
                   Chat
                 </button>
-                <button type="button" className={styles.btn_bag} onclick="document.location='mybag.html'">
+                <button
+                  type="button"
+                  className={styles.btn_bag}
+                  // onClick="document.location='mybag.html'"
+                >
                   Add bag
                 </button>
-                <button type="button" className={styles.btn_buy} onclick="document.location='checkout.html'">
+                <button
+                  type="button"
+                  className={styles.btn_buy}
+                  // onClick="document.location='checkout.html'"
+                >
                   Buy Now
                 </button>
               </div>
