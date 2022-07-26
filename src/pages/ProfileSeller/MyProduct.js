@@ -45,7 +45,7 @@ const MyProduct = () => {
   useEffect(() => {
     console.log("Fetching The Data ...");
     fethData(1, "asc");
-  }, []);
+  });
   const handlePage = (page) => {
     console.log("Sedang menjalankan pagination...");
     fethData(page);
