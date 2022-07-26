@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="./readme/logo.svg" />
+</div>
+<h3 align="center">Belanja</h3>
+<p align="center">
+  <a href="https://belanja-react.netlify.app/home">View Demo</a>
+   <br />
+    <p align="center">
+    <a href="https://reactjs.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/react?color=32C33B"></a>
+    <a href="https://redux.js.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/redux?color=32C33B"></a>
+    <a href="https://getbootstrap.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/bootstrap?color=32C33B"></a>
+    <a href="https://axios-http.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/axios?color=32C33B"></a>
+    <a href="https://momentjs.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/moment?color=32C33B"></a>
+    <a href="https://socket.io/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/socket.io-client?color=32C33B"></a>
+    <img src="https://img.shields.io/github/license/HyperCarry-Team/TukuShop-app-frontend?color=32C33B">
+    </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Available Scripts
+Belanja is an online store application where you can register as a buyer and/or seller. Features for sellers include creating products and deleting products. Features for shoppers are search for product, buy product, and cancel product purchase. This project is a team project. This web application is built using ReactJS, ExpressJS, PostgreSQL, and WebSocket.
 
-In the project directory, you can run:
+### Technology Used
+- [ReactJS](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Axios](https://github.com/axios/axios)
+- [Moment](https://momentjs.com/)
+- [Socket.IO](https://socket.io/)
 
-### `npm start`
+<!-- GETTING STARTED -->
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+- Clone This Repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`https://github.com/irfan43a/BelanjaReact`
 
-### `npm test`
+- Install Module
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `npm run build`
+- Setting .env
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+REACT_APP_NODE_ENV=YOUR_CURRENT_ENVIRONMENT
+REACT_APP_API_URL=YOUR_API_URL
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Executing program
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Run this project with `npm run start`.
 
-### `npm run eject`
+<!-- SCREENSHOT -->
+## Screenshot
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Landing
+<img src="./readme/1. ss-landing.jpg" />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Login Customer
+<img src="./readme/2. ss-login-customer.jpg" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Login Seller
+<img src="./readme/3. ss-login-seller.jpg" />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Register Customer
+<img src="./readme/4. ss-register-customer.jpg" />
 
-## Learn More
+### Register Seller
+<img src="./readme/5. ss-register-seller.jpg" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Forgot Password
+<img src="./readme/6. ss-forgot-password.jpg" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Reset Password
+<img src="./readme/7. ss-reset-password.jpg" />
 
-### Code Splitting
+### Product By Category
+<img src="./readme/8. ss-product-by-category.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Detail Product
+<img src="./readme/9. ss-detail-product.jpg" />
 
-### Analyzing the Bundle Size
+### Cart
+<img src="./readme/10. ss-cart.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Checkout
+<img src="./readme/11. ss-checkout.jpg" />
 
-### Making a Progressive Web App
+### Buy Now
+<img src="./readme/12. ss-buy-now.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Chat
+<img src="./readme/13. ss-chat.jpg" />
 
-### Advanced Configuration
+### Customer Profile
+<img src="./readme/14. ss-customer-profile.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Shipping
+<img src="./readme/15. ss-shipping-address.jpg" />
 
-### Deployment
+### My Order
+<img src="./readme/16. ss-myorder.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Detail Order
+<img src="./readme/17. ss-detailorder.jpg" />
 
-### `npm run build` fails to minify
+### Seller Profile
+<img src="./readme/18. ss-seller-profile.jpg" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### My Product
+<img src="./readme/19. ss-myproduct.jpg" />
+
+### Add Product
+<img src="./readme/20. ss-addproduct.jpg" />
+
+### Admin
+<p align="center" display=flex>
+  <table>
+  <tr>
+    <td><image src="screenshots/admin-login.png" alt="Login Page" width=100%></td>
+    <td><image src="screenshots/admin-home.png" alt="Register Page" width=100%/></td>
+  </tr>
+   <tr>
+    <td>Admin Login Page</td>
+    <td>Admin Home Page</td>
+  </tr>
+  
+  <tr>
+    <td><image src="screenshots/admin-category.png" alt="Login Page" width=100%></td>
+    <td><image src="screenshots/admin-brand.png" alt="Register Page" width=100%/></td>
+  </tr>
+   <tr>
+    <td>Admin Category Page</td>
+    <td>Admin Brand Page</td>
+  </tr>
+  
+  <tr>
+    <td><image src="screenshots/admin-product.png" alt="Login Page" width=100%></td>
+    <td><image src="screenshots/admin-transaction.png" alt="Register Page" width=100%/></td>
+  </tr>
+   <tr>
+    <td>Admin Product Page</td>
+    <td>Admin Transaction Page</td>
+  </tr>    
+  </table>
+</p>
+
+<image src="screenshots/admin user.png" alt="Landing Page" width=100%>
+    <p align="center">Admin User List Page</p>
+
+<!-- RELATED PROJECT -->
+## Related Project
+
+- [TukuShop API](https://github.com/HyperCarry-Team/TukuShop-app-backend)
+- [TukuShop Demo](https://tukushop-app.vercel.app/)
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
