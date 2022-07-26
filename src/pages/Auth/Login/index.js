@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
 import styles from "./login.module.css";
-import Logo from "../../../components/base/Logo";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../../configs/redux/actions/userAction";
+import { Input, Button } from "../../../components/base";
+import Logo from "../../../components/base/Logo";
+// import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -57,18 +58,14 @@ const Login = () => {
           </button>
         </div>
         <form onSubmit={handleLogin}>
-          <div className={styles.form}>
-            <div>
-              <input className={styles.email} type="email" name="email" value={dataUser.email} placeholder="email" onChange={handleChange} />
-            </div>
-            <div>
-              <input className={styles.pass} type="password" name="password" value={dataUser.password} placeholder="password" onChange={handleChange} />
-            </div>
-            <div className={styles.reset}>
-              <Link to="#">Forgot password?</Link>
-            </div>
-            <button>{isloading ? "Loading..." : "Login"}</button>
+          {/* <div className={styles.form}> */}
+          <Input type="text" name="email" className="inputLogin" placeholder="Email" value={dataUser.email} onChange={handleChange} />
+          <Input type="password" name="password" className="inputLogin" placeholder="Password" value={dataUser.password} onChange={handleChange} />
+          <div className={styles.reset}>
+            <Link to="#">Forgot password?</Link>
           </div>
+          <Button title={isloading ? "Loading..." : "Login"} className="btnLogin" onClick={handleLogin} />
+          {/* </div> */}
         </form>
         <div className={styles.register}>
           <p>

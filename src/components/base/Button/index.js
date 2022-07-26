@@ -1,8 +1,8 @@
 import styles from "./Button.module.css";
 
-const Button = ({ title, btn, color, type, onClick }) => {
+const Button = ({ title, className, color, type, onClick }) => {
   return (
-    <button className={`${styles[btn]} ${styles[color]}`} type={type} onClick={onClick}>
+    <button className={`${styles[className]} ${styles[color]}`} type={type} onClick={onClick}>
       {title}
     </button>
   );

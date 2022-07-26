@@ -1,0 +1,19 @@
+.inputLogin {
+  margin-top: 30px;
+  width: 400px;
+  height: 48px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  outline: none;
+  border-color: #9b9b9b;
+  /* background-color: aqua; */
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .inputLogin {
+    width: 350px;
+  }
+}

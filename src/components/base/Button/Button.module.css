@@ -1,0 +1,16 @@
+.btnLogin {
+  margin-top: 20px;
+  width: 400px;
+  height: 48px;
+  align-items: center;
+  background-color: #db3022;
+  color: #ffffff;
+  border: 0;
+  border-radius: 25px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .btnLogin {
+    width: 350px;
+  }
+}

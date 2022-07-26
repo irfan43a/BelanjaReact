@@ -8,8 +8,8 @@ import profile from "../../img/christian.png";
 import store from "../../img/home.png";
 import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
-import { getProducts } from "../../configs/redux/actions/productAction";
 import Button from "../../components/base/Button";
+import { getProducts } from "../../configs/redux/actions/productAction";
 // import { getCategory } from "../../configs/redux/actions/categoryAction";
 
 const MyProduct = () => {
