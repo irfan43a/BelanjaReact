@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import styles from "./product.module.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/modules/Navbar";
@@ -9,7 +9,7 @@ import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
 
 const Product = () => {
-  const [product, setProduct] = useState([]);
+  // const [product, setProduct] = useState([]);
   // const [page, setPage] = useState({
   //   currentPage: 1,
   //   limit: 5,
@@ -107,21 +107,21 @@ const Product = () => {
       <div className={styles.product}>
         <h1>Product</h1>
         <div className={styles.container}>
-          {product.map((item) => (
-            <div className={styles.card} key={item.id}>
+          {/* {product.map((item) => ( */}
+          {/* <div className={styles.card} key={item.id}>
               <div className={styles.image}>
                 <img src={item.photo} alt="" />
               </div>
               <div className="card-body">Item : {item.name}</div>
               <div className="card-body">Deskripsi : {item.description}</div>
               <div className="card-body">harga : {item.price}</div>
-              <div className="card-body"></div>
-              {/* <button onClick={() => deleteProduct(item.id)}>delete</button> */}
-              <Link to="/profileseler">
+              <div className="card-body"></div> */}
+          {/* <button onClick={() => deleteProduct(item.id)}>delete</button> */}
+          {/* <Link to="/profileseler">
                 <button> Edit</button>
-              </Link>
-            </div>
-          ))}
+              </Link> */}
+          {/* </div> */}
+          {/* ))} */}
         </div>
       </div>
     </div>
