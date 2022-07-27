@@ -1,143 +1,174 @@
 import axios from "axios";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 // import * as string from "../string";
 
-export const getProducts =
-  (page = 1, sortorder = "asc") =>
-  async (dispatch) => {
+export const getProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: "GET_PRODUCT_PENDING" });
+    const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products`);
+    dispatch({ type: "GET_PRODUCT_SUCCESS", payload: result.data.data });
+  } catch (error) {
+    dispatch({ type: "GET_PRODUCT_ERROR", payload: error.response.data });
+  }
+};
+
+export const getDetailProduct = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: "GET_PRODUCT_DETAIL_PENDING" });
+    const { data: resData } = await axios.get(`${process.env.REACT_APP_API_BACKEND}products/${id}`);
+    dispatch({ type: "GET_PRODUCT_DETAIL_SUCCESS", payload: resData.product });
+    return resData.data;
+  } catch (error) {
+    dispatch({ type: "GET_PRODUCT_DETAIL_ERROR", payload: error.response.data });
+  }
+};
+
+export const updateProduct = (id, data) => (dispatch) => {
+  return new Promise(async (resolve, reject) => {
     try {
-      dispatch({ type: "GET_PRODUCTS_PENDING" });
-      console.log(sortorder);
-      const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?sortby=price&sort=${sortorder}&page=${page}&limit=10`);
-      console.log(result.data);
-      const products = result.data;
-
-      dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: products });
-      // navigate('/home')
+      dispatch({ type: "UPDATE_PRODUCT_PENDING" });
+      const { data: resData } = await axios.put(`/products/${id}`, data);
+      dispatch({ type: "UPDATE_PRODUCT_SUCCESS" });
+      resolve(resData.data);
     } catch (error) {
-      console.log(error);
+      dispatch({ type: "UPDATE_PRODUCT_ERROR", payload: error.response.data });
+      reject(error.response.data);
     }
-  };
-
-export const detailProduct = (id) => async (dispatch) => {
-  try {
-    dispatch({ type: "DETAIL_PRODUCT_PENDING" });
-    console.log("get detail product run...");
-
-    const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products//detail/${id}`);
-    // console.log(result.data.data)
-    const productDetail = result.data.data;
-
-    dispatch({ type: "DETAIL_PRODUCT_SUCCESS", payload: productDetail });
-    // navigate('/home')
-  } catch (error) {
-    console.log(error);
-    swal({
-      title: "Get Detail Product Error!",
-      text: `${error.response.data.message}`,
-      icon: "error",
-    });
-  }
+  });
 };
+// export const getProducts =
+//   (page = 1, sortorder = "asc") =>
+//   async (dispatch) => {
+//     try {
+//       dispatch({ type: "GET_PRODUCTS_PENDING" });
+//       console.log(sortorder);
+//       const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?sortby=price&sort=${sortorder}&page=${page}&limit=10`);
+//       console.log(result.data);
+//       const products = result.data;
+//       dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: products });
+//       // navigate('/home')
+//     } catch (error) {
+//       console.log(error);
+//       dispatch({ type: "GET_PRODUCT_ERROR", payload: error.response.data });
+//     }
+//   };
 
-export const searchProducts = (search) => async (dispatch) => {
-  try {
-    dispatch({ type: "GET_PRODUCTS_PENDING" });
+// export const detailProduct = (id) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "DETAIL_PRODUCT_PENDING" });
+//     console.log("get detail product run...");
+//     const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products/${id}`);
+//     const productDetail = result.data.data;
+//     dispatch({ type: "DETAIL_PRODUCT_SUCCESS", payload: productDetail });
+//   } catch (error) {
+//     console.log(error);
+//     dispatch({ type: "DETAIL_PRODUCT_ERROR", payload: error.response.data });
+//     swal({
+//       title: "Get Detail Product Error!",
+//       text: `${error.response.data.message}`,
+//       icon: "error",
+//     });
+//   }
+// };
 
-    const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products?search=${search}`);
-    console.log(result.data);
-    const products = result.data;
+// export const searchProducts = (search) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "GET_PRODUCTS_PENDING" });
 
-    dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: products });
-    // navigate('/home')
-  } catch (error) {
-    console.log(error);
-  }
-};
+//     const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?search=${search}`);
+//     console.log(result.data);
+//     const products = result.data;
 
-export const updateProduct = (formData, localData, id) => async (dispatch) => {
-  try {
-    dispatch({ type: "UPDATE_PRODUCT_PENDING" });
+//     dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: products });
+//     // navigate('/home')
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-    const result = await axios.put(`http://localhost:5000/v1/products/edit/${id}`, formData, {
-      headers: { Authorization: `Bearer ${localData}` },
-    });
-    console.log(result);
-    swal({
-      title: "Good job!",
-      text: `${result.data.message}`,
-      icon: "success",
-    });
+// export const updateProduct = (formData, localData, id) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "UPDATE_PRODUCT_PENDING" });
+//     const result = await axios.put(`${process.env.REACT_APP_API_BACKEND}products/${id}`, formData, {
+//       headers: { Authorization: `Bearer ${localData}` },
+//     });
+//     console.log(result);
+//     swal({
+//       title: "Good job!",
+//       text: `${result.data.message}`,
+//       icon: "success",
+//     });
 
-    const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products?sortby=price&sortorder=desc&page=1&limit=10`);
-    const products = resultGet.data;
+//     const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?sortby=price&sortorder=desc&page=1&limit=10`);
+//     const products = resultGet.data;
 
-    dispatch({ type: "UPDATE_PRODUCT_SUCCESS", payload: products });
-  } catch (error) {
-    console.log(error);
-    console.log("Update Data Error!");
-  }
-};
+//     dispatch({ type: "UPDATE_PRODUCT_SUCCESS", payload: products });
+//   } catch (error) {
+//     console.log(error);
+//     console.log("Update Data Error!");
+//     dispatch({ type: "UPDATE_PRODUCT_ERROR", payload: error.response.data });
+//   }
+// };
 
-export const addProduct = (formData, authToken) => async (dispatch) => {
-  try {
-    dispatch({ type: "ADD_PRODUCT_PENDING" });
+// export const addProduct = (formData, authToken) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "ADD_PRODUCT_PENDING" });
 
-    const result = await axios.post(`${process.env.REACT_APP_API_BACKEND}/v1/products/add`, formData, {
-      headers: { Authorization: `Bearer ${authToken}` },
-    });
-    console.log(result);
-    swal({
-      title: "Good job!",
-      text: `Data Tersimpan`,
-      icon: "success",
-    });
+//     const result = await axios.post(`${process.env.REACT_APP_API_BACKEND}products/`, formData, {
+//       headers: { Authorization: `Bearer ${authToken}` },
+//     });
+//     console.log(result);
+//     swal({
+//       title: "Good job!",
+//       text: `Data Tersimpan`,
+//       icon: "success",
+//     });
 
-    const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products?sortby=price&sortorder=desc&page=1&limit=10`);
-    const products = resultGet.data;
+//     const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?sortby=price&sortorder=desc&page=1&limit=10`);
+//     const products = resultGet.data;
 
-    dispatch({ type: "ADD_PRODUCT_SUCCESS", payload: products });
+//     dispatch({ type: "ADD_PRODUCT_SUCCESS", payload: products });
 
-    // navigate('/')
-  } catch (error) {
-    console.log(error.response.data.message);
-    swal({
-      title: "Add Product Error!",
-      text: `${error.response.data.message}`,
-      icon: "error",
-    });
-  }
-};
+//     // navigate('/')
+//   } catch (error) {
+//     console.log(error.response.data.message);
+//     swal({
+//       title: "Add Product Error!",
+//       text: `${error.response.data.message}`,
+//       icon: "error",
+//     });
+//   }
+// };
 
-export const deleteProduct = (authToken, id) => async (dispatch) => {
-  try {
-    dispatch({ type: "DELETE_PRODUCT_PENDING" });
+// export const deleteProduct = (authToken, id) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "DELETE_PRODUCT_PENDING" });
 
-    await axios.delete(`http://localhost:5000/v1/products/${id}`, {
-      headers: { Authorization: `Bearer ${authToken}` },
-    });
-    swal({
-      title: "Success",
-      text: "Delete Product Success",
-      icon: "success",
-      button: "OK!",
-    });
+//     await axios.delete(`${process.env.REACT_APP_API_BACKEND}products/${id}`, {
+//       headers: { Authorization: `Bearer ${authToken}` },
+//     });
+//     swal({
+//       title: "Success",
+//       text: "Delete Product Success",
+//       icon: "success",
+//       button: "OK!",
+//     });
 
-    const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products?sortby=price&sortorder=desc&page=1&limit=10`);
-    const products = resultGet.data;
+//     const resultGet = await axios.get(`${process.env.REACT_APP_API_BACKEND}products?sortby=price&sortorder=desc&page=1&limit=10`);
+//     const products = resultGet.data;
 
-    dispatch({ type: "DELETE_PRODUCT_SUCCESS", payload: products });
+//     dispatch({ type: "DELETE_PRODUCT_SUCCESS", payload: products });
 
-    // navigate('/')
-  } catch (error) {
-    console.log(error.response.data.message);
-    swal({
-      title: "Delete Product Error!",
-      text: `${error.response.data.message}`,
-      icon: "error",
-    });
-  }
-};
+//     // navigate('/')
+//   } catch (error) {
+//     console.log(error.response.data.message);
+//     swal({
+//       title: "Delete Product Error!",
+//       text: `${error.response.data.message}`,
+//       icon: "error",
+//     });
+//   }
+// };
 
 // export const getProduct =
 //   ({ page, limit, search, sort }) =>
@@ -154,19 +185,3 @@ export const deleteProduct = (authToken, id) => async (dispatch) => {
 //       dispacth({ type: string.GET_PRODUCT_ERROR, payload: error.response });
 //     }
 //   };
-
-// import axios from "../../axios";
-// import * as string from "../string";
-
-// export const getProduct = () => async (dispacth) => {
-//   try {
-//     dispacth({ type: string.GET_PRODUCT_PENDING });
-//     const { data } = await axios({
-//       method: "GET",
-//       url: "/products",
-//     });
-//     dispacth({ type: string.GET_PRODUCT_SUCCESS, payload: { data: data.data, pagination: data.result } });
-//   } catch (error) {
-//     dispacth({ type: string.GET_PRODUCT_ERROR, payload: error.response });
-//   }
-// };

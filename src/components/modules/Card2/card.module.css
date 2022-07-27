@@ -41,7 +41,7 @@
 .card_title {
   width: 200px;
   font-size: 18px;
-  margin-top: 115px;
+  margin-top: 90px;
   font-weight: 700;
   /* background-color: aquamarine; */
   display: flex;
@@ -72,7 +72,7 @@
     padding-left: 3px;
   }
   .card_title {
-    margin-top: 85px;
+    margin-top: 59px;
     width: 130px;
     font-size: 14px;
   }

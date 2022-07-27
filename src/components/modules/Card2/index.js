@@ -10,7 +10,7 @@ const index = ({ image, name, price, id }) => {
         <img src={image} alt={image} />
       </div>
       <div className={styles.card_title}>
-        <Link to={`/product/${id}`}>{name}</Link>
+        <Link to={`/products/${id}`}>{name}</Link>
       </div>
       <div className={styles.deskrip}>
         <div className={styles.lain}>

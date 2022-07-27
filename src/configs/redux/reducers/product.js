@@ -1,6 +1,9 @@
 const initialState = {
-  products: {},
+  data: [],
+  detail: null,
+  pagination: {},
   isLoading: false,
+  error: null,
 };
 
 export const productsReducer = (state = initialState, action) => {
@@ -16,16 +19,45 @@ export const productsReducer = (state = initialState, action) => {
         products: action.payload,
         isLoading: false,
       };
-    case "GET_PRODUCTS_PENDING":
+    case "ADD_PRODUCT_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    case "GET_PRODUCT_PENDING":
       return {
         ...state,
         isLoading: true,
       };
-    case "GET_PRODUCTS_SUCCESS":
+    case "GET_PRODUCT_SUCCESS":
       return {
         ...state,
-        products: action.payload,
         isLoading: false,
+        data: action.payload,
+      };
+    case "GET_PRODUCT_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    case "GET_PRODUCT_DETAIL_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "GET_PRODUCT_DETAIL_SUCCESS":
+      return {
+        ...state,
+        isLoading: false,
+        detail: action.payload,
+      };
+    case "GET_PRODUCT_DETAIL_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
       };
     case "UPDATE_PRODUCT_PENDING":
       return {
@@ -35,8 +67,14 @@ export const productsReducer = (state = initialState, action) => {
     case "UPDATE_PRODUCT_SUCCESS":
       return {
         ...state,
-        products: action.payload,
         isLoading: false,
+        detail: action.payload,
+      };
+    case "UPDATE_PRODUCT_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
       };
     case "DELETE_PRODUCT_PENDING":
       return {
@@ -49,7 +87,12 @@ export const productsReducer = (state = initialState, action) => {
         products: action.payload,
         isLoading: false,
       };
-
+    case "DELETE_PRODUCT_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
@@ -58,6 +101,7 @@ export const productsReducer = (state = initialState, action) => {
 const searchState = {
   productDetail: {},
   isLoading: false,
+  error: null,
 };
 
 export const detailProdReducer = (state = searchState, action) => {
@@ -73,6 +117,12 @@ export const detailProdReducer = (state = searchState, action) => {
         ...state,
         productDetail: action.payload,
         isLoading: false,
+      };
+    case "DETAIL_PRODUCT_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
       };
 
     default:
