@@ -8,7 +8,7 @@ import Navbar from "../../components/modules/Navbar";
 import Footer from "../../components/base/Footer";
 import "bootstrap/dist/css/bootstrap.css";
 // import axios from "../../configs/axios";
-import Card from "../../components/modules/card2/index";
+import Card from "../../components/modules/card2";
 import { getProducts } from "../../configs/redux/actions/productAction";
 
 const Home = () => {
