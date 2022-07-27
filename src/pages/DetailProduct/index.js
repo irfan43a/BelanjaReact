@@ -13,7 +13,7 @@ const DetailProduct = () => {
   const params = useParams();
   useEffect(() => {
     dispatch(getDetailProduct(params.id));
-  });
+  }, [dispatch]);
 
   // tanpa redux
   // const { id } = useParams();
