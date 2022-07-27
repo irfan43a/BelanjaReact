@@ -10,9 +10,9 @@ const DetailProduct = () => {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
   const { detail: products } = useSelector((state) => state.products);
-  const params = useParams();
+  const { id } = useParams();
   useEffect(() => {
-    dispatch(getDetailProduct(params.id));
+    dispatch(getDetailProduct(id));
   }, [dispatch]);
 
   // tanpa redux
