@@ -10,14 +10,14 @@ const DetailProduct = () => {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
   const { detail: products } = useSelector((state) => state.products);
-  const { id } = useParams();
+  // const location = useLocation();
+  const params = useParams();
   useEffect(() => {
-    dispatch(getDetailProduct(id));
-  }, [dispatch]);
+    dispatch(getDetailProduct(params.id));
+  }, []);
 
   // tanpa redux
   // const { id } = useParams();
-  // const location = useLocation();
   // console.log(location);
 
   // const [product, setProduct] = useState([]);
