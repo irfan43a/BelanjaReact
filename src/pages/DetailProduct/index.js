@@ -1,4 +1,3 @@
-// import axios from "axios";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import StoreScore from "../../components/base/StoreScore/StoreScore";
@@ -14,7 +13,7 @@ const DetailProduct = () => {
   const params = useParams();
   useEffect(() => {
     dispatch(getDetailProduct(params.id));
-  }, []);
+  });
 
   // tanpa redux
   // const { id } = useParams();
