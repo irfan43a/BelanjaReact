@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 import star from "../../../img/Star.png";
 import { Link } from "react-router-dom";
 
-const index = ({ image, name, price, id }) => {
+const Card = ({ image, name, price, id }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imgcontainer}>
@@ -30,4 +30,4 @@ const index = ({ image, name, price, id }) => {
   );
 };
 
-export default index;
+export default Card;
