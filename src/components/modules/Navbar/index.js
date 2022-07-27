@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useNavigate, useLocation, Link } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./navbar.module.css";
 import Logo from "../../base/Logo";
@@ -10,7 +10,7 @@ import notif from "../../../img/notif.png";
 import mail from "../../../img/mail.png";
 import christian from "../../../img/christian.png";
 
-const Navbar = () => {
+const Navbar = ({ onChange, onClickButton }) => {
   const { user } = useSelector((state) => state.user);
   const [isLogin, setLogin] = useState(false);
 
@@ -21,7 +21,7 @@ const Navbar = () => {
     }
   }, []);
   // const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -40,8 +40,8 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <form className="d-flex">
-          <input className={styles.search} type="search" placeholder="Search " aria-label="Search" />
-          <button className={styles.btn_sort} type="submit" onClick={() => navigate("/")}>
+          <input className={styles.search} type="search" placeholder="Search " aria-label="Search" onChange={onChange} />
+          <button className={styles.btn_sort} type="submit" onClick={onClickButton}>
             <img src={sort} alt="sort" />
           </button>
         </form>

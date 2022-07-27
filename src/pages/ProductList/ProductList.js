@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/base/Button2";
 import styles from "./productList.module.css";
-import Card from "../../components/modules/Card";
+import Card from "../../components/modules/Cardexample";
 import Input from "../../components/base/Input2";
 
 const ProductList = () => {

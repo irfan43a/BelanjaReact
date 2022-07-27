@@ -3,13 +3,20 @@ import "bootstrap/dist/css/bootstrap.css";
 import Navbar from "../../components/modules/Navbar";
 import { Link } from "react-router-dom";
 import styles from "./mybag.module.css";
-import mesuit from "../../img/formalsuitblack.png";
-import jaket from "../../img/jaketjeans.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductBag } from "../../configs/redux/actions/productAction";
+import Card from "../../components/modules/BagCard";
 
 const MyBag = () => {
+  const { bag } = useSelector((state) => state.products);
   useEffect(function () {
     document.title = "My Bag";
   }, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProductBag());
+  }, [bag, dispatch]);
+  console.log("data dari bag", bag.data.name);
   return (
     <div>
       <Navbar />
@@ -23,7 +30,8 @@ const MyBag = () => {
                 <p>Select all items( 2 items selected)</p>
               </div>
               <div className={styles.item_all}>
-                <div className={styles.item}>
+                <Card id={bag.data.id} image={bag.data.photo} name={bag.data.name} price={bag.data.price} />
+                {/* <div className={styles.item}>
                   <input type="checkbox" name="selectall" id="select" className="check" />
                   <div className={styles.image}>
                     <img src={mesuit} alt={mesuit} />
@@ -44,7 +52,7 @@ const MyBag = () => {
                     <button>-</button>1<button>+</button>
                   </div>
                   <div className={styles.price}>$ 20.0</div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-md-2">

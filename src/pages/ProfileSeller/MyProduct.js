@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./MyProduct.module.css";
 import Navbar from "../../components/modules/Navbar";
@@ -8,51 +8,34 @@ import profile from "../../img/christian.png";
 import store from "../../img/home.png";
 import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
-import Button from "../../components/base/Button";
 import { getProducts } from "../../configs/redux/actions/productAction";
-// import { getCategory } from "../../configs/redux/actions/categoryAction";
+import Card from "../../components/modules/MyProductCard";
+import { Button } from "../../components/base";
 
 const MyProduct = () => {
-  // const { data } = useSelector((state) => state.product);
-  // const { datacategory } = useSelector((state) => state.category);
-  // const dispatch = useDispatch();
-  // console.log(data);
-  // // console.log(datacategory);
-
-  // useEffect(() => {
-  //   dispatch(getProduct);
-  //   // dispatch(getCategory);
-  // }, []);
-  // const [page, setPage] = useState({
-  //   currentPage: 1,
-  //   limit: 5,
-  // });
-  const { isLoading, products } = useSelector((state) => state.products);
-  const dispatch = useDispatch();
-
-  const fethData = async (page, sortorder, limit, search) => {
-    try {
-      dispatch(getProducts(page, limit, search, sortorder));
-      // const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}/v1/products/`)
-      // console.log(result.data);
-      // setData(result.data.data)
-    } catch (error) {
-      console.log(error);
-    }
-    console.log("Get Products Success!");
-  };
-
-  useEffect(() => {
-    console.log("Fetching The Data ...");
-    fethData(1, "asc");
+  const [page, setPage] = useState({
+    currentPage: 1,
+    limit: 5,
+    sortBy: "",
+    sort: "asc",
   });
-  const handlePage = (page) => {
-    console.log("Sedang menjalankan pagination...");
-    fethData(page);
+  console.log(page.limit);
+  const { data, isLoading } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchParams({ search: search });
   };
+  useEffect(() => {
+    console.log(searchParams.get("keyword"));
+    dispatch(getProducts(searchParams, { page: page.currentPage, limit: page.limit, sort: page.sort }));
+  }, [dispatch, page.currentPage, page.limit, page.sort, searchParams]);
+
   return (
     <section className={styles.profile}>
-      <Navbar />
+      <Navbar onClickButton={handleSearch} onChange={(e) => setSearch(e.target.value)} />
       <div className={styles.profile_sidebar}>
         <div className={styles.main_profile}>
           <div className={styles.profile_img}>
@@ -112,7 +95,8 @@ const MyProduct = () => {
         </div>
         <hr />
         <div>
-          <input className={styles.search} type="search" placeholder="Search " aria-label="Search" />
+          <input className={styles.search} type="search" placeholder="Search " aria-label="Search" onChange={(e) => setSearch(e.target.value)} />
+          <button>cari</button>
         </div>
         <div>
           <div className={styles.menu_sort}>
@@ -120,15 +104,20 @@ const MyProduct = () => {
               <button> Product name</button>
             </div>
             <div className={styles.sub_sort}>
-              <button>Price</button>
-              <button>Stock</button>
+              <button onClick={() => setPage({ ...page, sortBy: "price" })}>Price</button>
+              <button onClick={() => setPage({ ...page, sortBy: "stock" })}>Stock</button>
             </div>
+          </div>
+          <div>
+            <Button title="1" className="pagination" onClick={() => setPage({ ...page, currentPage: 1 })} />
+            <Button title="2" className="pagination" onClick={() => setPage({ ...page, currentPage: 2 })} />
+            <Button title="3" className="pagination" onClick={() => setPage({ ...page, currentPage: 3 })} />
           </div>
           <div className={styles.product_lis}>
             {/* <h1>product</h1> */}
             <div className={styles.wrapperCard}>
               {isLoading === false ? (
-                products.data?.map((item, idx) => (
+                data.data?.map((item, idx) => (
                   <div className={styles.card} key={item.id}>
                     <h3>{item.name}</h3>
                     <p>{item.description}</p>
@@ -139,21 +128,7 @@ const MyProduct = () => {
                 <p>Loading</p>
               )}
             </div>
-            <div className={`${styles["page-container"]}`}>
-              {/* <button
-                        className={`${styles.active}`}
-                        onClick={() => handlePage(1)}
-                    >1
-                    </button>
-
-                    <button
-                        onClick={() => handlePage(2)}
-                    >2
-                    </button> */}
-              {new Array(products.pagination).fill().map((index) => (
-                <Button onClick={() => handlePage(index + 1)} text={index + 1} key={index}></Button>
-              ))}
-            </div>
+            <div className={`${styles["page-container"]}`}>{isLoading ? <h1>Loading...</h1> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
           </div>
         </div>
       </div>

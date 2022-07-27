@@ -1,7 +1,13 @@
 const initialState = {
   data: [],
   detail: null,
-  pagination: {},
+  pagination: {
+    currentPage: 0,
+    limit: 0,
+    totalData: 0,
+    totalPage: 0,
+  },
+  bag: [],
   isLoading: false,
   error: null,
 };
@@ -92,6 +98,15 @@ export const productsReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         error: action.payload,
+      };
+    case "ADD_BAG":
+      return {
+        ...state,
+        bag: action.payload,
+      };
+    case "GET_BAG":
+      return {
+        ...state,
       };
     default:
       return state;

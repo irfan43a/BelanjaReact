@@ -1,21 +1,28 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import StoreScore from "../../components/base/StoreScore/StoreScore";
 import Navbar from "../../components/modules/Navbar";
 import styles from "./detailProduk.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getDetailProduct } from "../../configs/redux/actions/productAction";
+import { getDetailProduct, addBag } from "../../configs/redux/actions/productAction";
 
 const DetailProduct = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { detail: products } = useSelector((state) => state.products);
   // const location = useLocation();
   const params = useParams();
+
+  const handleAddBag = (data) => {
+    console.log(data);
+    dispatch(addBag(data));
+    navigate("/mybag");
+  };
+
   useEffect(() => {
     dispatch(getDetailProduct(params.id));
   }, [dispatch, params.id]);
-
+  console.log(products);
   // tanpa redux
   // const { id } = useParams();
   // console.log(location);
@@ -82,14 +89,8 @@ const DetailProduct = () => {
                 <div className={styles.c_blue}></div>
                 <div className={styles.c_green}></div>
               </div>
-              <div className={styles.request}>
-                <div className={styles.size}>
-                  <h5>Size</h5>
-                </div>
-                <div className={styles.qty}>
-                  <h5>jumlah</h5>
-                </div>
-              </div>
+              <div className={styles.request}></div>
+              <br />
               <div className={styles.btn}>
                 <button
                   type="button"
@@ -102,6 +103,9 @@ const DetailProduct = () => {
                   type="button"
                   className={styles.btn_bag}
                   // onClick="document.location='mybag.html'"
+                  onClick={() => {
+                    handleAddBag(products);
+                  }}
                 >
                   Add bag
                 </button>

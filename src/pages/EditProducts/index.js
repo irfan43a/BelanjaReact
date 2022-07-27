@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./ProfileSeller.module.css";
 import Navbar from "../../components/modules/Navbar";
-import box from "../../img/box.png";
 import profile from "../../img/christian.png";
 import store from "../../img/home.png";
 import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getDetailProduct } from "../../configs/redux/actions/productAction";
 
 const ProfileSeller = () => {
+  const { id } = useParams();
+  const { detail: products } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
   const [dataProduct, setDataProduct] = useState({
     name: "",
     description: "",
@@ -50,19 +54,23 @@ const ProfileSeller = () => {
     bodyFormData.append("photo", file);
 
     axios({
-      method: "POST",
-      url: `${process.env.REACT_APP_API_BACKEND}products/`,
+      method: "PUT",
+      url: `${process.env.REACT_APP_API_BACKEND}products/${id}`,
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
-        alert("produk berhasil di tambah");
+        alert("produk berhasil di rubah");
         console.log(res);
       })
       .catch((e) => {
         alert(e.response.data.message);
       });
   };
+  useEffect(() => {
+    dispatch(getDetailProduct(id));
+  }, [dispatch, id]);
+  console.log(products);
   return (
     <section className={styles.profile}>
       <Navbar />
@@ -122,20 +130,20 @@ const ProfileSeller = () => {
               <hr />
               <label htmlFor="">Name of goods</label>
               {/* <input type="text" className={styles.data} value={dataProduct.name} onChange={handleChange} /> */}
-              <input type="text" className={styles.data} name="name" value={dataProduct.name} placeholder="Nama Product" onChange={handleChange} />
+              <input type="text" className={styles.data} name="name" value={dataProduct.name} placeholder={products?.name} onChange={handleChange} />
             </div>
             <div className={styles.item}>
               <h4>Item details</h4>
               <hr />
               <label htmlFor="">Price</label>
               {/* <input type="number" className={styles.data} value={dataProduct.price} onChange={handleChange} /> */}
-              <input type="number" className={styles.data} name="price" value={dataProduct.price} placeholder="Price" onChange={handleChange} />
+              <input type="number" className={styles.data} name="price" value={dataProduct.price} placeholder={products?.price} onChange={handleChange} />
               <label htmlFor="">Stock</label>
               {/* <input type="number" placeholder="buah" className={styles.data} value={dataProduct.stock} onChange={handleChange} /> */}
-              <input type="number" className={styles.data} name="stock" value={dataProduct.stock} placeholder="Stock" onChange={handleChange} />
+              <input type="number" className={styles.data} name="stock" value={dataProduct.stock} placeholder={products?.stock} onChange={handleChange} />
               <label htmlFor="">id category</label>
               {/* <input type="number" className={styles.data} value={dataProduct.id_category} onChange={handleChange} /> */}
-              <input type="number" className={styles.data} name="id_category" value={dataProduct.id_category} placeholder="id category" onChange={handleChange} />
+              <input type="number" className={styles.data} name="id_category" value={dataProduct.id_category} placeholder={products?.id_category} onChange={handleChange} />
               <label htmlFor="">Condition</label>
               <div className={styles.radio}>
                 <div className={styles.radio_item}>
@@ -153,23 +161,23 @@ const ProfileSeller = () => {
               <hr />
               <div className={styles.preview_image}>
                 <div className={styles.main_img}>
-                  <img src={box} alt="box" />
+                  <img src={products?.photo} alt="box" />
                 </div>
                 <div>
-                  <img src={box} alt="box" />
+                  <img src={products?.photo} alt="box" />
                 </div>
                 <div>
-                  <img src={box} alt="box" />
+                  <img src={products?.photo} alt="box" />
                 </div>
                 <div>
-                  <img src={box} alt="box" />
+                  <img src={products?.photo} alt="box" />
                 </div>
                 <div>
-                  <img src={box} alt="box" />
+                  <img src={products?.photo} alt="box" />
                 </div>
               </div>
               <div className={styles.upload_image}>
-                <input type="file" name="photo" value={dataProduct.photo} placeholder="photo" onChange={handleUploadChange} />
+                <input type="file" name="photo" value={dataProduct.photo} placeholder={products?.price} onChange={handleUploadChange} />
                 {/* <button type="submit">PRIMARY</button> */}
               </div>
             </div>

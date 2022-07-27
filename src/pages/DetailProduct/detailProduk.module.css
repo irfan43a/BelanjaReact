@@ -125,3 +125,20 @@ h5 {
   padding-top: 40px;
   padding-bottom: 10px;
 }
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .main {
+    width: 100vw;
+    padding: 0 30px;
+  }
+  .main_image {
+    width: 208px;
+    height: 208px;
+    margin-left: 50px;
+  }
+}

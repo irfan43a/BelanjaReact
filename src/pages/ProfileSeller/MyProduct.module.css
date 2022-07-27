@@ -111,9 +111,9 @@
 }
 .product {
   width: 850px;
-  height: 636px;
+  height: 740px;
   border: 1px solid black;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 30px;
   padding-bottom: 10px;
 }
@@ -136,12 +136,14 @@
 }
 .product_lis {
   width: 800px;
-  height: 412px;
+  height: 510px;
   border: 1px solid #d4d4d4;
   border-radius: 4px;
-  /* margin-top: -30px; */
+  /* background-color: #f3456f; */
   margin-left: -8px;
   margin-right: 25px;
+  margin-top: 8px;
+  padding-left: 10px;
 }
 .menu_sort {
   display: flex;

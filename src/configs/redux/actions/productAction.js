@@ -2,15 +2,18 @@ import axios from "axios";
 // import swal from "sweetalert";
 // import * as string from "../string";
 
-export const getProducts = () => async (dispatch) => {
-  try {
-    dispatch({ type: "GET_PRODUCT_PENDING" });
-    const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products`);
-    dispatch({ type: "GET_PRODUCT_SUCCESS", payload: result.data.data });
-  } catch (error) {
-    dispatch({ type: "GET_PRODUCT_ERROR", payload: error.response.data });
-  }
-};
+export const getProducts =
+  (searchParams, { page, limit, sort, sortBy }) =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: "GET_PRODUCT_PENDING" });
+      const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}products/?${searchParams}&page=${page}&limit=${limit}
+      ${sortBy ? "&sortBy=" + sortBy : ""}${sort ? "&sort=" + sort : ""}`);
+      dispatch({ type: "GET_PRODUCT_SUCCESS", payload: result.data.data });
+    } catch (error) {
+      dispatch({ type: "GET_PRODUCT_ERROR", payload: error.response.data });
+    }
+  };
 
 export const getDetailProduct = (id) => async (dispatch) => {
   try {
@@ -35,6 +38,18 @@ export const updateProduct = (id, data) => (dispatch) => {
       reject(error.response.data);
     }
   });
+};
+
+export const addBag = (data) => {
+  return {
+    type: "ADD_BAG",
+    payload: { data },
+  };
+};
+export const getProductBag = () => {
+  return {
+    type: "GET_BAG",
+  };
 };
 // export const getProducts =
 //   (page = 1, sortorder = "asc") =>

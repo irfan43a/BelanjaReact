@@ -15,6 +15,7 @@ import TodoList from "../../pages/TodoList";
 import Counter from "../../pages/Counter";
 import Page404 from "../../pages/Page404";
 import ProfileSeller from "../../pages/ProfileSeller";
+import EditProduct from "../../pages/EditProducts";
 import MyProduct from "../../pages/ProfileSeller/MyProduct";
 import RequireAuth from "../../components/base/RequireAuth";
 const Router = () => {
@@ -50,6 +51,14 @@ const Router = () => {
           element={
             <RequireAuth>
               <ProfileSeller />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/editproduct/:id"
+          element={
+            <RequireAuth>
+              <EditProduct />
             </RequireAuth>
           }
         />
