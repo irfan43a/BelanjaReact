@@ -14,7 +14,7 @@ const DetailProduct = () => {
   const params = useParams();
   useEffect(() => {
     dispatch(getDetailProduct(params.id));
-  }, []);
+  }, [dispatch, params.id]);
 
   // tanpa redux
   // const { id } = useParams();
