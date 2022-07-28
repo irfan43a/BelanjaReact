@@ -4,10 +4,17 @@ body {
   margin: 0;
 }
 
+.caraousell {
+  position: relative;
+  margin-bottom: 100px;
+  top: 76px;
+  gap: 10px;
+  /* background-color: aqua; */
+}
 .main {
   /* background-color: rgb(252, 67, 67); */
-  margin-top: 70px;
-  min-height: 100vh;
+  margin-top: 50px;
+  min-height: 120vh;
   width: 100vw;
   padding: 0 85px;
 }
@@ -24,7 +31,10 @@ body {
   margin-top: 20px;
   margin-bottom: 50px;
 }
-
+.category {
+  display: flex;
+  gap: 30px;
+}
 h5 {
   font-weight: bold;
 }

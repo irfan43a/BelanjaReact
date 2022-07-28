@@ -8,6 +8,7 @@ const initialState = {
     totalPage: 0,
   },
   bag: [],
+  total: 0,
   isLoading: false,
   error: null,
 };
@@ -108,6 +109,35 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case "INCREMET_PRODUCT":
+      const bag = state.bag.map((item) => {
+        if (item.id === action.payload) {
+          item.count += 1;
+        }
+        return item;
+      });
+      const price = state.bag.map((item) => item.price);
+      const count = state.bag.map((item) => item.count);
+      const total = price * count;
+      return {
+        ...state,
+        bag,
+        total: total,
+      };
+    case "DECREMEN_PRODUCT":
+      const bagDec = state.bag.map((item) => {
+        if (item.id === action.payload) {
+          item.count -= 1;
+        }
+        return item;
+      });
+      // const min = total - price;
+      return {
+        ...state,
+        bag: bagDec,
+        // total: min,
+      };
+
     default:
       return state;
   }

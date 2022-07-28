@@ -69,7 +69,7 @@ const Registerustomer = () => {
             {/* <input className={styles.fullname} type="text" name="fullname" value={formRegister.fullname} placeholder="fullname" onChange={handleChange} /> */}
             <Input type="text" name="email" className="inputLogin" placeholder="Email" value={formRegister.email} onChange={handleChange} />
             {/* <input className={styles.email} type="email" name="email" value={formRegister.email} placeholder="Email" onChange={handleChange} /> */}
-            <Input type="text" name="password" className="inputLogin" placeholder="Password" value={formRegister.password} onChange={handleChange} />
+            <Input type="password" name="password" className="inputLogin" placeholder="Password" value={formRegister.password} onChange={handleChange} />
             {/* <input className={styles.pass} type="password" name="password" value={formRegister.password} placeholder="password" onChange={handleChange} /> */}
             <Button
               title="Register"

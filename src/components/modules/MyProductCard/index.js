@@ -25,7 +25,7 @@ const Card = ({ image, name, price, id }) => {
       <div className={styles.card_title}>
         <Link to={`/products/${id}`}>{name}</Link>
       </div>
-      <div className={styles.price}>$ {price}</div>
+      <div className={styles.price}>RP. {price}</div>
       <div className={styles.btn}>
         <Button title="Edit" className="btnproduct" onClick={() => navigate(`/editproduct/${id}`)} />
         <Button title="Hapus" className="btnproduct" onClick={() => deleteProduct(id)} />

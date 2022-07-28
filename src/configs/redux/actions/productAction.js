@@ -43,7 +43,7 @@ export const updateProduct = (id, data) => (dispatch) => {
 export const addBag = (data) => {
   return {
     type: "ADD_BAG",
-    payload: { data },
+    payload: { ...data, count: 1 },
   };
 };
 export const getProductBag = () => {
@@ -51,6 +51,19 @@ export const getProductBag = () => {
     type: "GET_BAG",
   };
 };
+export const IncrementProducts = (id) => {
+  return {
+    type: "INCREMET_PRODUCT",
+    payload: id,
+  };
+};
+export const DecrementProducts = (id) => {
+  return {
+    type: "DECREMEN_PRODUCT",
+    payload: id,
+  };
+};
+
 // export const getProducts =
 //   (page = 1, sortorder = "asc") =>
 //   async (dispatch) => {

@@ -1,13 +1,30 @@
 import React, { useEffect } from "react";
 import Navbar from "../../components/modules/Navbar";
 import styles from "./chechkout.module.css";
-import mesuit from "../../img/formalsuitblack.png";
-import jaket from "../../img/jaketjeans.png";
+// import mesuit from "../../img/formalsuitblack.png";
+// import jaket from "../../img/jaketjeans.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductBag } from "../../configs/redux/actions/productAction";
+import Card from "../../components/modules/BagCard";
 
 const CheckOut = () => {
+  const { bag, total } = useSelector((state) => state.products);
+  useEffect(function () {
+    document.title = "My Bag";
+  }, []);
+  const dispatch = useDispatch();
+  const sumary = () => {
+    bag.map((item) => item.price);
+  };
+  const delivery = 140000;
+  useEffect(() => {
+    dispatch(getProductBag());
+  }, [bag, dispatch]);
+  console.log("data dari bag", bag);
   useEffect(function () {
     document.title = "Check Out";
   }, []);
+  console.log("total", sumary);
   return (
     <section className={styles.checkout}>
       <Navbar />
@@ -27,7 +44,10 @@ const CheckOut = () => {
             <button className={styles.address_btn}>Choose another address</button>
             <div className={styles.select}>
               <div class={styles.item_all}>
-                <div className={styles.item}>
+                {bag?.map((item) => (
+                  <Card id={item.id} image={item.photo} count={item.count} name={item.name} price={item.price} />
+                ))}
+                {/* <div className={styles.item}>
                   <div className={styles.image}>
                     <img src={mesuit} alt={mesuit} />
                   </div>
@@ -42,7 +62,7 @@ const CheckOut = () => {
                   <div className={styles.title_product}>Men's jacket jeans</div>
 
                   <div className={styles.price}>$ 20.0</div>
-                </div>
+                </div> */}
               </div>
               <div className={styles.product_price}></div>
             </div>
@@ -50,14 +70,14 @@ const CheckOut = () => {
           <div className="col-md-4">
             <h3>Shooping summary</h3>
             <div className={styles.order}>
-              <span>Order</span> <span className={styles.price}>$40.0</span>
+              <span>Order</span> <span className={styles.price}>Rp.{total}</span>
             </div>
             <div className={styles.delivery}>
-              <span>Delivery</span> <span className={styles.price}>$5.0</span>
+              <span>Delivery</span> <span className={styles.price}>RP.{delivery}</span>
             </div>
             <hr />
             <div className={styles.shoping_sumary}>
-              <p>Shooping summary</p> <span className={styles.price}> $45.0</span>
+              <p>Shooping summary</p> <span className={styles.price}>Rp.{total + delivery}</span>
             </div>
             <br />
             <button className={styles.buy_btn}>Buy</button>

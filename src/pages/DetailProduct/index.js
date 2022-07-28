@@ -81,14 +81,7 @@ const DetailProduct = () => {
               <h1>{products?.name}</h1>
               <StoreScore />
               <p>Price</p>
-              <h3>$ {products?.price}</h3>
-              <h5>Color</h5>
-              <div className={styles.color}>
-                <div className={styles.c_black}></div>
-                <div className={styles.c_red}></div>
-                <div className={styles.c_blue}></div>
-                <div className={styles.c_green}></div>
-              </div>
+              <h3>RP. {products?.price}</h3>
               <div className={styles.request}></div>
               <br />
               <div className={styles.btn}>

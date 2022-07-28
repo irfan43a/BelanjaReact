@@ -1,0 +1,22 @@
+.cardCategory {
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #cc0b04;
+  color: white;
+  font-size: 24px;
+}
+.title {
+  /* background-color: aqua; */
+  margin: 0;
+  position: absolute;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}

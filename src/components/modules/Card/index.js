@@ -14,7 +14,7 @@ const Card = ({ image, name, price, id }) => {
       </div>
       <div className={styles.deskrip}>
         <div className={styles.lain}>
-          <div className={styles.price}>$ {price}</div>
+          <div className={styles.price}>RP. {price}</div>
           <div className={styles.store}> Zalora Cloth</div>
           <div className={styles.store_rangked}>
             <img src={star} alt="start" />

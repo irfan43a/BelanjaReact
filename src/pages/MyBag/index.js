@@ -4,11 +4,11 @@ import Navbar from "../../components/modules/Navbar";
 import { Link } from "react-router-dom";
 import styles from "./mybag.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductBag } from "../../configs/redux/actions/productAction";
+import { getProductBag, IncrementProducts, DecrementProducts } from "../../configs/redux/actions/productAction";
 import Card from "../../components/modules/BagCard";
 
 const MyBag = () => {
-  const { bag } = useSelector((state) => state.products);
+  const { bag, total } = useSelector((state) => state.products);
   useEffect(function () {
     document.title = "My Bag";
   }, []);
@@ -31,7 +31,7 @@ const MyBag = () => {
               </div>
               <div className={styles.item_all}>
                 {bag?.map((item) => (
-                  <Card id={item.data.id} image={item.data.photo} name={item.data.name} price={item.data.price} />
+                  <Card id={item.id} image={item.photo} name={item.name} count={item.count} price={item.price} Increment={() => dispatch(IncrementProducts(item.id))} Decrement={() => dispatch(DecrementProducts(item.id))} />
                 ))}
                 {/* <div className={styles.item}>
                   <input type="checkbox" name="selectall" id="select" className="check" />
@@ -62,7 +62,7 @@ const MyBag = () => {
             </div>
             <div className="col-md-3">
               <h5>Shoping summary</h5>
-              Total price <input type="text" value="$40.0" />
+              Total price <input type="text" value={total} />
               <Link to="/checkout">
                 <button type="submit" className={styles.buy_btn}>
                   buy
