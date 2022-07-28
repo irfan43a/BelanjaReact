@@ -66,14 +66,34 @@ const Home = () => {
                 setPage({ ...page, sortBy: e.target.value });
               }}
             >
-              <option value="">Sort berdasarkan</option>
-              <option value="price">termurah</option>
-              <option value="name">A-Z</option>
+              <option value="">Sort Berdasarkan</option>
+              <option value="name">Nama</option>
+              <option value="price">Harga</option>
             </select>
-            <div>
+            <select
+              name="sort"
+              id="sort"
+              value={page.sort}
+              onChange={(e) => {
+                setPage({ ...page, sort: e.target.value });
+              }}
+            >
+              <option value="asc">Terendah</option>
+              <option value="desc">Tertinggi</option>
+            </select>
+            <div className={styles.btnPagination}>
               <Button title="1" className="pagination" onClick={() => setPage({ ...page, currentPage: 1 })} />
               <Button title="2" className="pagination" onClick={() => setPage({ ...page, currentPage: 2 })} />
               <Button title="3" className="pagination" onClick={() => setPage({ ...page, currentPage: 3 })} />
+              <Button title="4" className="pagination" onClick={() => setPage({ ...page, currentPage: 4 })} />
+              <Button title="5" className="pagination" onClick={() => setPage({ ...page, currentPage: 5 })} />
+              {/* {new Array(products.pagination.totalPage).fill().map((item, index) =>
+                        <Button
+                            onClick={() => handlePage(index + 1)}
+                            text={index + 1}
+                            key={index}
+                        >
+                        </Button>)} */}
             </div>
           </div>
           <p className={styles.sub}>You've never seen it before</p>

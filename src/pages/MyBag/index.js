@@ -16,7 +16,7 @@ const MyBag = () => {
   useEffect(() => {
     dispatch(getProductBag());
   }, [bag, dispatch]);
-  console.log("data dari bag", bag.data.name);
+  console.log("data dari bag", bag);
   return (
     <div>
       <Navbar />
@@ -30,7 +30,9 @@ const MyBag = () => {
                 <p>Select all items( 2 items selected)</p>
               </div>
               <div className={styles.item_all}>
-                <Card id={bag.data.id} image={bag.data.photo} name={bag.data.name} price={bag.data.price} />
+                {bag?.map((item) => (
+                  <Card id={item.data.id} image={item.data.photo} name={item.data.name} price={item.data.price} />
+                ))}
                 {/* <div className={styles.item}>
                   <input type="checkbox" name="selectall" id="select" className="check" />
                   <div className={styles.image}>

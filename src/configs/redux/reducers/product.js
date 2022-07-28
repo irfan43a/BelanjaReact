@@ -102,7 +102,7 @@ export const productsReducer = (state = initialState, action) => {
     case "ADD_BAG":
       return {
         ...state,
-        bag: action.payload,
+        bag: [...state.bag, action.payload],
       };
     case "GET_BAG":
       return {
