@@ -58,7 +58,7 @@ const Navbar = ({ onChange, onClickButton }) => {
                   <NavLink to="/login">Login</NavLink>
                 </li>
                 <li className={styles.signup}>
-                  <NavLink to="/register">Signup</NavLink>
+                  <NavLink to="/customer">Signup</NavLink>
                 </li>
                 {/* <li className={styles.profile}>
                   <NavLink to="/profile">{user.fullname}</NavLink>

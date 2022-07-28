@@ -61,7 +61,7 @@ const MyBag = () => {
               <span>Delete</span>
             </div>
             <div className="col-md-3">
-              <h5>Shooping summary</h5>
+              <h5>Shoping summary</h5>
               Total price <input type="text" value="$40.0" />
               <Link to="/checkout">
                 <button type="submit" className={styles.buy_btn}>
