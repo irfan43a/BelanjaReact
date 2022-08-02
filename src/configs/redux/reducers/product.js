@@ -116,9 +116,10 @@ export const productsReducer = (state = initialState, action) => {
         }
         return item;
       });
-      const price = state.bag.map((item) => item.price);
-      const count = state.bag.map((item) => item.count);
-      const total = price * count;
+      const total = bag.reduce((prev, curr) => {
+        return prev + curr.count * curr.price;
+      }, 0);
+      console.log(total);
       return {
         ...state,
         bag,
@@ -131,11 +132,13 @@ export const productsReducer = (state = initialState, action) => {
         }
         return item;
       });
-      // const min = total - price;
+      const totalDec = bagDec.reduce((prev, curr) => {
+        return prev + curr.count * curr.price;
+      }, 0);
       return {
         ...state,
         bag: bagDec,
-        // total: min,
+        total: totalDec,
       };
 
     default:

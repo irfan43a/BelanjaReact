@@ -10,6 +10,7 @@ import cart from "../../img/cart.png";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailProduct } from "../../configs/redux/actions/productAction";
+import swal from "sweetalert";
 
 const ProfileSeller = () => {
   const { id } = useParams();
@@ -60,11 +61,21 @@ const ProfileSeller = () => {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
-        alert("produk berhasil di rubah");
+        // alert("produk berhasil di rubah");
+        swal({
+          title: "Good job!",
+          text: `Product berhasil di Update`,
+          icon: "success",
+        });
         console.log(res);
       })
       .catch((e) => {
-        alert(e.response.data.message);
+        // alert(e.response.data.message);
+        swal({
+          title: "Oops!",
+          text: `${e.response.data.message}`,
+          icon: "error",
+        });
       });
   };
   useEffect(() => {

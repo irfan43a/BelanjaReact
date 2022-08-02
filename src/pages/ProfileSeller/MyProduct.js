@@ -10,7 +10,7 @@ import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
 import { getProducts } from "../../configs/redux/actions/productAction";
 import Card from "../../components/modules/MyProductCard";
-import { Button } from "../../components/base";
+import { Button, Loding } from "../../components/base";
 
 const MyProduct = () => {
   const [page, setPage] = useState({
@@ -125,10 +125,10 @@ const MyProduct = () => {
                   </div>
                 ))
               ) : (
-                <p>Loading</p>
+                <Loding />
               )}
             </div>
-            <div className={`${styles["page-container"]}`}>{isLoading ? <h1>Loading...</h1> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
+            <div className={`${styles["page-container"]}`}>{isLoading ? <Loding /> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
           </div>
         </div>
       </div>

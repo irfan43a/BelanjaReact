@@ -6,8 +6,11 @@ import styles from "./chechkout.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductBag } from "../../configs/redux/actions/productAction";
 import Card from "../../components/modules/BagCard";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
 const CheckOut = () => {
+  const navigate = useNavigate();
   const { bag, total } = useSelector((state) => state.products);
   useEffect(function () {
     document.title = "My Bag";
@@ -25,6 +28,16 @@ const CheckOut = () => {
     document.title = "Check Out";
   }, []);
   console.log("total", sumary);
+
+  const chechkout = () => {
+    swal({
+      title: "Good job!",
+      text: `Produk Berhasil Chechot`,
+      icon: "success",
+    });
+    navigate("/home");
+  };
+
   return (
     <section className={styles.checkout}>
       <Navbar />
@@ -80,7 +93,9 @@ const CheckOut = () => {
               <p>Shooping summary</p> <span className={styles.price}>Rp.{total + delivery}</span>
             </div>
             <br />
-            <button className={styles.buy_btn}>Buy</button>
+            <button className={styles.buy_btn} onClick={() => chechkout()}>
+              Buy
+            </button>
           </div>
         </div>
       </div>

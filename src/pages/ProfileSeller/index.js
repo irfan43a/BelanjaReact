@@ -9,6 +9,7 @@ import store from "../../img/home.png";
 import packag from "../../img/package.png";
 import cart from "../../img/cart.png";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const ProfileSeller = () => {
   const [dataProduct, setDataProduct] = useState({
@@ -56,11 +57,21 @@ const ProfileSeller = () => {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
-        alert("produk berhasil di tambah");
+        // alert("Produk berhasil di tambah");
+        swal({
+          title: "Good job!",
+          text: `${res.data.message} Produk berhasil di tambah`,
+          icon: "success",
+        });
         console.log(res);
       })
       .catch((e) => {
         alert(e.response.data.message);
+        swal({
+          title: "Oops!",
+          text: `${e.response.data.message}`,
+          icon: "error",
+        });
       });
   };
   return (

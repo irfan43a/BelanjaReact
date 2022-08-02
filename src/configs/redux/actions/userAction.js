@@ -16,6 +16,11 @@ export const loginUser = (dataFrom, navigate) => async (dispatch) => {
     });
     navigate("/home");
   } catch (error) {
-    console.log(error.response);
+    // console.log(error.response);
+    swal({
+      title: "Oops!",
+      text: `${error.response.data.message}`,
+      icon: "error",
+    });
   }
 };

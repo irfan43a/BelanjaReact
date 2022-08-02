@@ -31,7 +31,15 @@ const MyBag = () => {
               </div>
               <div className={styles.item_all}>
                 {bag?.map((item) => (
-                  <Card id={item.id} image={item.photo} name={item.name} count={item.count} price={item.price} Increment={() => dispatch(IncrementProducts(item.id))} Decrement={() => dispatch(DecrementProducts(item.id))} />
+                  <Card
+                    id={item.id}
+                    image={item.photo}
+                    name={item.name}
+                    count={item.count}
+                    price={item.price}
+                    Increment={() => dispatch(IncrementProducts(item.id))}
+                    Decrement={() => item.count > 1 && dispatch(DecrementProducts(item.id))}
+                  />
                 ))}
                 {/* <div className={styles.item}>
                   <input type="checkbox" name="selectall" id="select" className="check" />

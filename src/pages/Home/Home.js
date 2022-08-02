@@ -9,7 +9,7 @@ import Card from "../../components/modules/Card";
 import { getProducts } from "../../configs/redux/actions/productAction";
 import { getCategory } from "../../configs/redux/actions/categoryAction";
 import { useSearchParams } from "react-router-dom";
-import { Button } from "../../components/base";
+import { Button, Loding } from "../../components/base";
 import Pic from "../../img/1.png";
 import Pic2 from "../../img/2.png";
 import Category from "../../components/modules/CategoryCard";
@@ -77,7 +77,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <div className={styles.category}>{isLoading ? <h1>Loading...</h1> : category.map((item) => <Category key={item.id} id={item.id} name={item.name} img={item.photo} />)}</div>
+        <div className={styles.category}>{isLoading ? <Loding /> : category.map((item) => <Category key={item.id} id={item.id} name={item.name} img={item.photo} />)}</div>
         <div className={styles.maincontent}>
           <h5>New</h5>
           <div>
@@ -120,13 +120,13 @@ const Home = () => {
             </div>
           </div>
           <p className={styles.sub}>You've never seen it before</p>
-          <div className={styles.content}>{isLoading ? <h1>Loading...</h1> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
+          <div className={styles.content}>{isLoading ? <Loding /> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
         </div>
 
         <div className={styles.maincontent}>
           <h5>Popular</h5>
           <p className={styles.sub}>You've never seen it before</p>
-          <div className={styles.content}>{isLoading ? <h1>Loading...</h1> : data.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
+          <div className={styles.content}>{isLoading ? <Loding /> : data.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
         </div>
       </section>
 
