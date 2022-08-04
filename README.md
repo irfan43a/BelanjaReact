@@ -83,7 +83,7 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 
 ### Profile
 
-<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402813/Belanja/pageimage/Profile_ll1fgu.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659593525/Belanja/pageimage/Profile_oknd2l.jpg" />
 
 
 ### My Product
@@ -99,6 +99,20 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 
 ## Related Project
 
+- [Belanja Front App](https://github.com/irfan43a/BelanjaReact)
 - [Belanja API](https://github.com/irfan43a/Belanja-BE)
 - [Belanja Demo](https://belanja-react.netlify.app/)
+- [Belanja Web Service](https://belanja-app.herokuapp.com)
+
+## Contact
+
+My Email : irfan43abdin@gmail.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## License
+
+Distributed under the [MIT](/LICENSE) License.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
