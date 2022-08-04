@@ -10,8 +10,7 @@
     <a href="https://redux.js.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/redux?color=32C33B"></a>
     <a href="https://getbootstrap.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/bootstrap?color=32C33B"></a>
     <a href="https://axios-http.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/axios?color=32C33B"></a>
-    <a href="https://momentjs.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/moment?color=32C33B"></a>
-   
+      
     <img src="https://img.shields.io/github/license/HyperCarry-Team/TukuShop-app-frontend?color=32C33B">
     </p>
 </p>
@@ -65,32 +64,39 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402655/Belanja/pageimage/Login_eeflrc.jpg" />
 
-### Register
+### Register Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402668/Belanja/pageimage/register_mqo41l.jpg" />
+
+### Register Seller
+
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659594297/Belanja/pageimage/registerseller_mkio5n.jpg" />
 
 ### Detail Product
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402694/Belanja/pageimage/product_detail_grzjrz.jpg" />
 
-### Bag
+### Bag Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402785/Belanja/pageimage/mybag_umuqog.jpg" />
 
-### Checkout
+### Checkout Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402796/Belanja/pageimage/chekout_qqtboa.jpg" />
 
-### Profile
+### Profile Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659593525/Belanja/pageimage/Profile_oknd2l.jpg" />
 
+### Profile Customer
 
-### My Product
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659593525/Belanja/pageimage/Profile_oknd2l.jpg" />
+
+### My Product Seller
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402841/Belanja/pageimage/MyProduct_rdtdez.jpg" />
 
-### Add Product
+### Add Product Seller
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402858/Belanja/pageimage/insertproduct_fiyw4r.jpg" />
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402833/Belanja/pageimage/isertprodutc2_ret4ia.jpg" />
