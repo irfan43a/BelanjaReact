@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "./card.module.css";
-import Button from "../../base/Button";
 import { Link } from "react-router-dom";
 
-const Card = ({ image, name, price, id, count, Increment, Decrement, btndelete }) => {
+const Card = ({ image, name, price, id, count, Increment, Decrement }) => {
+  const qty = count.toString();
+  const total = price * qty;
+  console.log("price", price);
+  console.log("count", qty);
+  console.log("price", typeof price);
+  console.log("count", typeof qty);
+  console.log(total);
+
   return (
     <div className={styles.card}>
       <input type="checkbox" name={name} id={id} className="check" />
@@ -14,12 +21,10 @@ const Card = ({ image, name, price, id, count, Increment, Decrement, btndelete }
         <Link to={`/products/${id}`}>{name}</Link>
       </div>
       <div className={styles.btn}>
-        <Button title="-" className="counter" onClick={Decrement} />
+        <span>RP. {price}</span>
         <span>{count}</span>
-        <Button title="+" className="counter" onClick={Increment} />
       </div>
-      <div className={styles.price}>RP. {price}</div>
-      <div className={styles.delete}>{/* <Button title="delete" className="deletebag" onClick={btndelete} /> */}</div>
+      <div className={styles.price}>RP. {total}</div>
     </div>
   );
 };

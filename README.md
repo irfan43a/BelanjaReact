@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./readme/logo.svg" />
+  <img src="https://res.cloudinary.com/hirejob/image/upload/v1659403233/Belanja/pageimage/belanja_logo_nrxers.jpg" />
 </div>
 <h3 align="center">Belanja</h3>
 <p align="center">
@@ -28,8 +28,6 @@ Belanja is a website-based application to facilitate buying and selling transact
 - [Redux](https://redux.js.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Axios](https://github.com/axios/axios)
-- [Moment](https://momentjs.com/)
-- [Socket.IO](https://socket.io/)
 
 <!-- GETTING STARTED -->
 
@@ -61,59 +59,41 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 
 ### Landing
 
-<img src="./readme/1. ss-landing.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402681/Belanja/pageimage/landing_ouqb6e.jpg" />
 
-### Login Customer
+### Login
 
-<img src="./readme/2. ss-login-customer.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402655/Belanja/pageimage/Login_eeflrc.jpg" />
 
-### Register Customer
+### Register
 
-<img src="./readme/4. ss-register-customer.jpg" />
-
-### Product By Category
-
-<img src="./readme/8. ss-product-by-category.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402668/Belanja/pageimage/register_mqo41l.jpg" />
 
 ### Detail Product
 
-<img src="./readme/9. ss-detail-product.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402694/Belanja/pageimage/product_detail_grzjrz.jpg" />
 
 ### Bag
 
-<img src="./readme/10. ss-cart.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402785/Belanja/pageimage/mybag_umuqog.jpg" />
 
 ### Checkout
 
-<img src="./readme/11. ss-checkout.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402796/Belanja/pageimage/chekout_qqtboa.jpg" />
 
-### Buy Now
+### Profile
 
-<img src="./readme/12. ss-buy-now.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402813/Belanja/pageimage/Profile_ll1fgu.jpg" />
 
-### Customer Profile
-
-<img src="./readme/14. ss-customer-profile.jpg" />
-
-### Shipping
-
-<img src="./readme/15. ss-shipping-address.jpg" />
-
-### My Order
-
-<img src="./readme/16. ss-myorder.jpg" />
-
-### Seller Profile
-
-<img src="./readme/18. ss-seller-profile.jpg" />
 
 ### My Product
 
-<img src="./readme/19. ss-myproduct.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402841/Belanja/pageimage/MyProduct_rdtdez.jpg" />
 
 ### Add Product
 
-<img src="./readme/20. ss-addproduct.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402858/Belanja/pageimage/insertproduct_fiyw4r.jpg" />
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402833/Belanja/pageimage/isertprodutc2_ret4ia.jpg" />
 
 <!-- RELATED PROJECT -->
 

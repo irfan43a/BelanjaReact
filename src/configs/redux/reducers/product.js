@@ -8,6 +8,7 @@ const initialState = {
     totalPage: 0,
   },
   bag: [],
+  subtotal: 0,
   total: 0,
   isLoading: false,
   error: null,

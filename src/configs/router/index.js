@@ -17,6 +17,7 @@ import Page404 from "../../pages/Page404";
 import ProfileSeller from "../../pages/ProfileSeller";
 import EditProduct from "../../pages/EditProducts";
 import MyProduct from "../../pages/ProfileSeller/MyProduct";
+import MyOrder from "../../pages/MyOrder";
 import RequireAuth from "../../components/base/RequireAuth";
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/products/:id" element={<DetailProduct />} />
         <Route path="/sellingproduct" element={<SellingProduct />} />
+        <Route path="/myOrder" element={<MyOrder />} />
         <Route
           path="/mybag"
           element={

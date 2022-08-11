@@ -59,7 +59,7 @@ const Home = () => {
       <section className={styles.polular}>
         <section className={styles.caraousell}>
           <div className="container">
-            <div className="row" justify-content-center mt-4>
+            <div className="row">
               <div className={"col-12 d-flex " + styles.caraousell}>
                 <div>
                   <img className={"img-fluid " + styles.j1} src={Pic} alt="" />
@@ -77,10 +77,11 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <div className={styles.category}>{isLoading ? <Loding /> : category.map((item) => <Category key={item.id} id={item.id} name={item.name} img={item.photo} />)}</div>
+        <div className={styles.category}>{isLoading ? <Loding /> : category.map((item) => <Category key={item.id} id={item.id} name={item.name} img={item.img} />)}</div>
         <div className={styles.maincontent}>
           <h5>New</h5>
-          <div>
+          <p className={styles.sub}>You've never seen it before</p>
+          <div className={styles.sort}>
             <select
               name="sortBy"
               id="sortBy"
@@ -104,29 +105,43 @@ const Home = () => {
               <option value="asc">Terendah</option>
               <option value="desc">Tertinggi</option>
             </select>
-            <div className={styles.btnPagination}>
-              <Button title="1" className="pagination" onClick={() => setPage({ ...page, currentPage: 1 })} />
-              <Button title="2" className="pagination" onClick={() => setPage({ ...page, currentPage: 2 })} />
-              <Button title="3" className="pagination" onClick={() => setPage({ ...page, currentPage: 3 })} />
-              <Button title="4" className="pagination" onClick={() => setPage({ ...page, currentPage: 4 })} />
-              <Button title="5" className="pagination" onClick={() => setPage({ ...page, currentPage: 5 })} />
-              {/* {new Array(products.pagination.totalPage).fill().map((item, index) =>
+          </div>
+
+          <div className={styles.content}>{isLoading ? <Loding /> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
+          <div className={styles.btnPagination}>
+            <Button title="1" className="pagination" onClick={() => setPage({ ...page, currentPage: 1 })} />
+            <Button title="2" className="pagination" onClick={() => setPage({ ...page, currentPage: 2 })} />
+            <Button title="3" className="pagination" onClick={() => setPage({ ...page, currentPage: 3 })} />
+            <Button title="4" className="pagination" onClick={() => setPage({ ...page, currentPage: 4 })} />
+            <Button title="5" className="pagination" onClick={() => setPage({ ...page, currentPage: 5 })} />
+            {/* {new Array(products.pagination.totalPage).fill().map((item, index) =>
                         <Button
                             onClick={() => handlePage(index + 1)}
                             text={index + 1}
                             key={index}
                         >
                         </Button>)} */}
-            </div>
           </div>
-          <p className={styles.sub}>You've never seen it before</p>
-          <div className={styles.content}>{isLoading ? <Loding /> : data?.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
         </div>
 
         <div className={styles.maincontent}>
           <h5>Popular</h5>
           <p className={styles.sub}>You've never seen it before</p>
           <div className={styles.content}>{isLoading ? <Loding /> : data.map((item) => <Card key={item.id} id={item.id} image={item.photo} name={item.name} price={item.price} />)}</div>
+        </div>
+        <div className={styles.btnPagination}>
+          <Button title="1" className="pagination" onClick={() => setPage({ ...page, currentPage: 1 })} />
+          <Button title="2" className="pagination" onClick={() => setPage({ ...page, currentPage: 2 })} />
+          <Button title="3" className="pagination" onClick={() => setPage({ ...page, currentPage: 3 })} />
+          <Button title="4" className="pagination" onClick={() => setPage({ ...page, currentPage: 4 })} />
+          <Button title="5" className="pagination" onClick={() => setPage({ ...page, currentPage: 5 })} />
+          {/* {new Array(products.pagination.totalPage).fill().map((item, index) =>
+                        <Button
+                            onClick={() => handlePage(index + 1)}
+                            text={index + 1}
+                            key={index}
+                        >
+                        </Button>)} */}
         </div>
       </section>
 

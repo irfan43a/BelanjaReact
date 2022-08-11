@@ -5,6 +5,7 @@ const initialState = {
     role: "",
   },
   isLoading: false,
+  profile: {},
 };
 
 const userReducer = (state = initialState, action) => {
@@ -20,6 +21,23 @@ const userReducer = (state = initialState, action) => {
         ...state,
         user: action.payload,
         isLoading: false,
+      };
+    case "GET_PROFILE_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "GET_PROFILE_SUCCESS":
+      return {
+        ...state,
+        isLoading: false,
+        profile: action.payload,
+      };
+    case "GET_PROFILE_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
       };
     default:
       return state;

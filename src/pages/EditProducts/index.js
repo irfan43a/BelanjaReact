@@ -29,7 +29,7 @@ const ProfileSeller = () => {
     file: null,
     priview: "",
   });
-
+  console.log(file);
   const handleUploadChange = (e) => {
     console.log(e.target.files[0]);
     let upload = e.target.files[0];

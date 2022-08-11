@@ -10,8 +10,8 @@ const DetailProduct = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { detail: products } = useSelector((state) => state.products);
-  // const location = useLocation();
   const params = useParams();
+  // const location = useLocation();
 
   const handleAddBag = (data) => {
     console.log(data);
@@ -23,6 +23,7 @@ const DetailProduct = () => {
     dispatch(getDetailProduct(params.id));
   }, [dispatch, params.id]);
   console.log(products);
+
   // tanpa redux
   // const { id } = useParams();
   // console.log(location);
@@ -85,13 +86,13 @@ const DetailProduct = () => {
               <div className={styles.request}></div>
               <br />
               <div className={styles.btn}>
-                <button
+                {/* <button
                   type="button"
                   className={styles.btn_chat}
                   // onClick="document.location=''"
                 >
                   Chat
-                </button>
+                </button> */}
                 <button
                   type="button"
                   className={styles.btn_bag}
@@ -102,13 +103,13 @@ const DetailProduct = () => {
                 >
                   Add bag
                 </button>
-                <button
+                {/* <button
                   type="button"
                   className={styles.btn_buy}
                   // onClick="document.location='checkout.html'"
                 >
                   Buy Now
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

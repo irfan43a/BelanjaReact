@@ -9,6 +9,10 @@ import Card from "../../components/modules/BagCard";
 
 const MyBag = () => {
   const { bag, total } = useSelector((state) => state.products);
+
+  const handledelete = () => {
+    alert("Delete di tekan");
+  };
   useEffect(function () {
     document.title = "My Bag";
   }, []);
@@ -37,40 +41,19 @@ const MyBag = () => {
                     name={item.name}
                     count={item.count}
                     price={item.price}
+                    btndelete={() => handledelete()}
                     Increment={() => dispatch(IncrementProducts(item.id))}
                     Decrement={() => item.count > 1 && dispatch(DecrementProducts(item.id))}
                   />
                 ))}
-                {/* <div className={styles.item}>
-                  <input type="checkbox" name="selectall" id="select" className="check" />
-                  <div className={styles.image}>
-                    <img src={mesuit} alt={mesuit} />
-                  </div>
-                  <div className={styles.title_product}> Mens formal suit - Black </div>
-                  <div className={styles.qty}>
-                    <button>-</button>1<button>+</button>
-                  </div>
-                  <div className={styles.price}>$ 20.0</div>
-                </div>
-                <div className={styles.item}>
-                  <input type="checkbox" name="selectall" id="select" className="check" />
-                  <div className={styles.image}>
-                    <img src={jaket} alt={jaket} />
-                  </div>
-                  <div className={styles.title_product}>Men's jacket jeans</div>
-                  <div className={styles.qty}>
-                    <button>-</button>1<button>+</button>
-                  </div>
-                  <div className={styles.price}>$ 20.0</div>
-                </div> */}
               </div>
             </div>
-            <div className="col-md-2">
-              <span>Delete</span>
-            </div>
-            <div className="col-md-3">
+            <div className="col-md-2">{/* <span>Delete</span> */}</div>
+            <div className={`col-md-3`}>
               <h5>Shoping summary</h5>
-              Total price <input type="text" value={total} />
+              <div className={styles.sumary}>
+                Total price <span>{total}</span>
+              </div>
               <Link to="/checkout">
                 <button type="submit" className={styles.buy_btn}>
                   buy

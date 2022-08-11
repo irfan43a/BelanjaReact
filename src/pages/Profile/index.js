@@ -2,16 +2,27 @@ import React, { useEffect } from "react";
 import styles from "./profile.module.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from "../../components/modules/Navbar";
-import profile from "../../img/christian.png";
+import profileimg from "../../img/christian.png";
+import pencil from "../../img/pencil.svg";
 import user from "../../img/user.png";
 import map from "../../img/map.png";
 import order from "../../img/order.png";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { profileUser } from "../../configs/redux/actions/userAction";
 
 const Profile = () => {
-  useEffect(function () {
-    document.title = "Profile";
-  }, []);
+  const { profile } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(
+    function () {
+      dispatch(profileUser());
+      document.title = "Profile";
+    },
+    [dispatch]
+  );
+  console.log("data profile", profile);
   return (
     <section className={styles.main}>
       <Navbar />
@@ -21,11 +32,15 @@ const Profile = () => {
             <div className={styles.profile_sidebar}>
               <div className={styles.main_profile}>
                 <div className={styles.profile_img}>
-                  <img src={profile} alt={profile} />
+                  <img src={profile.profileImage ? profile.profileImage : profileimg} alt={profile} />
                 </div>
                 <div className={styles.name_profile}>
-                  <p>james mikael</p>
-                  <p>ubah profile</p>
+                  <p>{profile.fullname}</p>
+                  <label>
+                    <img src={pencil} alt="" />
+                    Ubah Profile Image
+                    <input type="file" className={styles.inputimg} />
+                  </label>
                 </div>
               </div>
               <div className={styles.select_profile}>
@@ -64,7 +79,7 @@ const Profile = () => {
                     <div className={styles.dropdown}>
                       <button className={styles.dropbtn}>My Order</button>
                       <div className={styles.dropdown_content}>
-                        <Link to="#">My Order</Link>
+                        <Link to="/myOrder">My Order</Link>
                       </div>
                     </div>
                   </div>
@@ -86,7 +101,7 @@ const Profile = () => {
                         <label htmlFor="My account">Name</label>
                       </td>
                       <td>
-                        <input type="text" />
+                        <input type="text" name="name" value={profile.fullname} />
                       </td>
                     </tr>
                     <tr>
@@ -94,7 +109,7 @@ const Profile = () => {
                         <label htmlFor="My account">Email</label>
                       </td>
                       <td>
-                        <input type="text" />
+                        <input type="text" name="email" value={profile.email} />
                       </td>
                     </tr>
                     <tr>
@@ -131,7 +146,7 @@ const Profile = () => {
                   </table>
                 </div>
                 <div className={styles.image_input}>
-                  <img src={profile} alt="cris" />
+                  <img src={profile.profileImage ? profile.profileImage : profileimg} alt="cris" />
                   <button className={styles.image_btn}>Select image</button>
                 </div>
               </div>

@@ -57,7 +57,6 @@ const ProfileSeller = () => {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
-        // alert("Produk berhasil di tambah");
         swal({
           title: "Good job!",
           text: `${res.data.message} Produk berhasil di tambah`,

@@ -1,0 +1,31 @@
+.myOrderPg {
+  width: 100vw;
+  height: 100vh;
+}
+.conten {
+  display: flex;
+  padding-top: 100px;
+  padding-left: 125px;
+  padding-right: 50px;
+  /* background-color: aqua; */
+}
+.sidebar {
+  width: 30%;
+  /* background-color: aquamarine; */
+}
+.maincontent {
+  width: 70%;
+  height: 520px;
+  /* background-color: blanchedalmond; */
+  padding: 35px;
+}
+.ordertable {
+  border: 1px solid black;
+  height: 520px;
+  padding: 20px;
+}
+.overflow {
+  width: 700px;
+  height: 400px;
+  overflow: scroll;
+}

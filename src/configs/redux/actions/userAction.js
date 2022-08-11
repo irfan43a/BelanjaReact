@@ -1,5 +1,6 @@
 import axios from "axios";
 import swal from "sweetalert";
+
 export const loginUser = (dataFrom, navigate) => async (dispatch) => {
   try {
     dispatch({ type: "USER_LOGIN_PENDING" });
@@ -22,5 +23,20 @@ export const loginUser = (dataFrom, navigate) => async (dispatch) => {
       text: `${error.response.data.message}`,
       icon: "error",
     });
+  }
+};
+
+export const profileUser = () => async (dispatch) => {
+  try {
+    dispatch({ type: "GET_PROFILE_PENDING" });
+    const token = localStorage.getItem("token");
+    const result = await axios.get(`${process.env.REACT_APP_API_BACKEND}users/profile`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    dispatch({ type: "GET_PROFILE_SUCCESS", payload: result.data.data });
+  } catch (error) {
+    dispatch({ type: "GET_PROFILE_ERROR", payload: error.response.data });
   }
 };
