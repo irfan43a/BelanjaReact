@@ -10,9 +10,6 @@
     <a href="https://redux.js.org/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/redux?color=32C33B"></a>
     <a href="https://getbootstrap.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/bootstrap?color=32C33B"></a>
     <a href="https://axios-http.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/axios?color=32C33B"></a>
-    <a href="https://momentjs.com/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/moment?color=32C33B"></a>
-    <a href="https://socket.io/"><img src="https://img.shields.io/github/package-json/dependency-version/HyperCarry-Team/TukuShop-app-frontend/socket.io-client?color=32C33B"></a>
-    <img src="https://img.shields.io/github/license/HyperCarry-Team/TukuShop-app-frontend?color=32C33B">
     </p>
 </p>
 
@@ -68,19 +65,27 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 ### Register
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402668/Belanja/pageimage/register_mqo41l.jpg" />
+<<<<<<< HEAD
+=======
+
+### Register Seller
+
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659594297/Belanja/pageimage/registerseller_mkio5n.jpg" />
+>>>>>>> e2a4680f150ac0522c7c130860b7994aa84e75ac
 
 ### Detail Product
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402694/Belanja/pageimage/product_detail_grzjrz.jpg" />
 
-### Bag
+### Bag Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402785/Belanja/pageimage/mybag_umuqog.jpg" />
 
-### Checkout
+### Checkout Customer
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402796/Belanja/pageimage/chekout_qqtboa.jpg" />
 
+<<<<<<< HEAD
 ### Profile
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402813/Belanja/pageimage/Profile_ll1fgu.jpg" />
@@ -91,6 +96,21 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402841/Belanja/pageimage/MyProduct_rdtdez.jpg" />
 
 ### Add Product
+=======
+### Profile Customer
+
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659593525/Belanja/pageimage/Profile_oknd2l.jpg" />
+
+### Profile Customer
+
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659593525/Belanja/pageimage/Profile_oknd2l.jpg" />
+
+### My Product Seller
+
+<img src="https://res.cloudinary.com/hirejob/image/upload/v1659402841/Belanja/pageimage/MyProduct_rdtdez.jpg" />
+
+### Add Product Seller
+>>>>>>> e2a4680f150ac0522c7c130860b7994aa84e75ac
 
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402858/Belanja/pageimage/insertproduct_fiyw4r.jpg" />
 <img src="https://res.cloudinary.com/hirejob/image/upload/v1659402833/Belanja/pageimage/isertprodutc2_ret4ia.jpg" />
@@ -99,5 +119,20 @@ REACT_APP_API_BACKENDL=YOUR_API_URL
 
 ## Related Project
 
+- [Belanja Front App](https://github.com/irfan43a/BelanjaReact)
 - [Belanja API](https://github.com/irfan43a/Belanja-BE)
 - [Belanja Demo](https://belanja-react.netlify.app/)
+- [Belanja Web Service](https://belanja-app.herokuapp.com)
+
+## Contact
+
+My Email : irfan43abdin@gmail.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## License
+
+Distributed under the [MIT](/LICENSE) License.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
